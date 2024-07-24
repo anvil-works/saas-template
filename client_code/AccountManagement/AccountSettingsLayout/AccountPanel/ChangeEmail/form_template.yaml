@@ -1,0 +1,11 @@
+container: {type: ColumnPanel}
+components:
+- name: email_text_box
+  properties: {error: false, placeholder: Email}
+  type: form:dep_gqlhr7sei7ys7:Components.TextInput.TextField
+  layout_properties: {grid_position: 'YHEYEK,CVSBGR', full_width_row: true}
+- name: save_button
+  properties: {text: Save, align: right, appearance: filled}
+  type: form:dep_gqlhr7sei7ys7:Components.Button
+  layout_properties: {grid_position: 'JDHRCQ,RWECMV', full_width_row: true}
+is_package: true

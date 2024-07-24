@@ -1,0 +1,7 @@
+container: {type: ColumnPanel}
+components:
+- name: link_1
+  properties: {text: Manage your subscription, italic: false, underline: false}
+  type: form:dep_gqlhr7sei7ys7:Components.Link
+  layout_properties: {grid_position: 'AIXYNI,WPBOPF', full_width_row: true}
+is_package: true

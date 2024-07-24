@@ -1,0 +1,27 @@
+container: {type: ColumnPanel}
+components:
+- name: heading_1
+  properties: {text: Delete Your Data}
+  type: form:dep_gqlhr7sei7ys7:Components.Heading
+  layout_properties: {grid_position: 'LXDANU,RGMPUP', full_width_row: true}
+- name: rich_text_1
+  properties:
+    content: |-
+      Are you want to delete your account, subscriptinon information and usage data from our systems?
+      <br>
+      <span style="color:#B3261E;"><b>This is irreversible.</b></span>
+    format: restricted_html
+  type: RichText
+  layout_properties: {grid_position: 'JWBKXV,UKCUON', full_width_row: true}
+  components: []
+- name: cancel_button
+  properties: {align: center, text: Cancel, appearance: elevated}
+  type: form:dep_gqlhr7sei7ys7:Components.Button
+  layout_properties: {grid_position: 'QWRUFK,FLYGJQ'}
+  event_bindings: {click: cancel_button_click}
+- name: delete_button
+  properties: {text: 'Yes, delete my data.', align: center, appearance: filled, background: 'theme:Error'}
+  type: form:dep_gqlhr7sei7ys7:Components.Button
+  layout_properties: {grid_position: 'QWRUFK,LYTVUX'}
+  event_bindings: {click: delete_button_click}
+is_package: true

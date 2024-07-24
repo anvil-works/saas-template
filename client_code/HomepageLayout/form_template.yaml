@@ -19,3 +19,4 @@ components_by_slot:
     properties: {text: Account}
     type: form:dep_gqlhr7sei7ys7:Components.Button
     layout_properties: {}
+layout_metadata: {title: Homepage Layout}

@@ -19,3 +19,4 @@ slots:
     index: 1
     set_layout_properties: {grid_position: 'PXGHJL,ZCGIGN'}
     target: {type: container, name: column_panel_1}
+layout_metadata: {title: Account Settings}
