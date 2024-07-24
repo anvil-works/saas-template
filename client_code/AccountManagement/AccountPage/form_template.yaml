@@ -1,0 +1,11 @@
+container: {type: ColumnPanel}
+components:
+- name: settings_button
+  properties: {text: Settings, align: center, appearance: elevated, icon_align: right, icon: settings}
+  type: form:dep_gqlhr7sei7ys7:Components.Button
+  layout_properties: {grid_position: 'DXDGEG,UKPOWR'}
+- name: logout_button
+  properties: {text: Log out, align: center, appearance: elevated, icon: exit_to_app, icon_align: right}
+  type: form:dep_gqlhr7sei7ys7:Components.Button
+  layout_properties: {grid_position: 'EWRHPF,NAUSBB'}
+is_package: true

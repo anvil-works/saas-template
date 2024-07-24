@@ -1,7 +1,12 @@
 unique_ids:
   forms:
+    APP_README: '172183491713516588994536.576029'
+    AccountManagement.AccountPage: '1721834730326568169185334.7349'
+    AccountManagement.AccountSettingsLayout: '1721835010194434241435199.1625'
     HomepageLayout: '172183394744075593203136.70181'
-  modules: {}
+    StripePricing: '1721834618690651542658275.706'
+  modules:
+    AccountManagement: '1721834882393543352672694.3647'
   server_modules: {}
   assets:
     standard-page.html: 2LEXNEUYAC4JEKSRIQH22MSRJ4NVBQDF

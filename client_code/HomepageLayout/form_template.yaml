@@ -1,2 +1,21 @@
 layout: {type: 'form:dep_gqlhr7sei7ys7:NavigationDrawerLayout'}
 is_package: true
+slots:
+  content_slot:
+    index: 0
+    set_layout_properties: {}
+    target: {type: slot, name: slot_1}
+components_by_slot:
+  slot_2:
+  - name: pricing_button
+    properties: {text: Pricing}
+    type: form:dep_gqlhr7sei7ys7:Components.Button
+    layout_properties: {}
+  - name: upgrade_button
+    properties: {text: Upgrade}
+    type: form:dep_gqlhr7sei7ys7:Components.Button
+    layout_properties: {}
+  - name: account_button
+    properties: {text: Account}
+    type: form:dep_gqlhr7sei7ys7:Components.Button
+    layout_properties: {}

@@ -1,0 +1,21 @@
+container: {type: ColumnPanel}
+components:
+- name: column_panel_1
+  properties: {col_widths: '{"GMFDLS":15,"ZCGIGN":45}'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'MMRVQL,EEVEBA', full_width_row: true}
+  components:
+  - name: account_tab_button
+    properties: {text: Account}
+    type: form:dep_gqlhr7sei7ys7:Components.Button
+    layout_properties: {grid_position: 'PXGHJL,GMFDLS ELQLLU,BTNMCC'}
+  - name: subscription_tab_button
+    properties: {text: Subscription}
+    type: form:dep_gqlhr7sei7ys7:Components.Button
+    layout_properties: {grid_position: 'PXGHJL,GMFDLS HIEUHX,RWXDEF'}
+is_package: true
+slots:
+  settings_main_slot:
+    index: 1
+    set_layout_properties: {grid_position: 'PXGHJL,ZCGIGN'}
+    target: {type: container, name: column_panel_1}

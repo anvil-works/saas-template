@@ -5,6 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 import anvil.server
+
 from ..StripePricing import StripePricing
 
 from ..AccountManagement.AccountPage import AccountPage as AccountPage
