@@ -1,0 +1,18 @@
+container:
+  type: ColumnPanel
+  event_bindings: {show: form_show}
+components:
+- name: card_1
+  properties: {}
+  type: form:dep_gqlhr7sei7ys7:Components.Card
+  layout_properties: {grid_position: 'YSZLYU,RVXKNJ'}
+  components:
+  - name: title
+    properties: {text: 'Add your company name, tagline and/or logo here.', scale: medium, font_size: 26, align: center}
+    type: form:dep_gqlhr7sei7ys7:Components.Text
+    layout_properties: {slot: card-content-slot}
+  - name: login_button
+    properties: {align: center, text: Login, appearance: filled}
+    type: form:dep_gqlhr7sei7ys7:Components.Button
+    layout_properties: {slot: card-content-slot}
+is_package: true

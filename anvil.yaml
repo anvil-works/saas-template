@@ -1,6 +1,6 @@
 allow_embedding: false
-package_name: M3_App_28
-name: M3 App 28
+package_name: SaaS_Template___M3_V3
+name: SaaS Template - M3 V3
 startup_form: null
 renamed: true
 runtime_options:
@@ -20,6 +20,9 @@ services:
 - source: /runtime/services/anvil/users.yml
   client_config: {allow_signup: false, enable_automatically: true, use_email: true, confirm_email: true}
   server_config: {user_table: users}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
 native_deps: null
 startup: {type: form, module: HomepageLayout}
 db_schema:
@@ -46,3 +49,7 @@ db_schema:
       admin_ui: {order: 5, width: 200}
       type: bool
     title: Users
+secrets:
+  stripe_test_api_key:
+    value: {T4O5IQ35ZG7TTCZN: wKicTXysluYtsuFwBYK31Uq1YhX3Xedua/2NOqMILkSdO+vxMTel49STEStiie3I198EXBvuY9xYDXsH1ni1QdXB96Kst9LZm0JMPiNzyPn3kEAMu6wKSLB39Mc3uP+YZt/l/vsmDWREQ+FtgXcekPdaGAZJPMa4G+5eGTfURDdpD2Ifi5ezUtEX/VrBi41ZjLIVgYjzoLQS2s7VqDdqWUaAIzXUrCN5vR9y2LNszbSWQLTzrDBmIqz6ZKeAzricQdAez22e0SPYPg==}
+    type: secret
