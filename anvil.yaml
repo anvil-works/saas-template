@@ -4,15 +4,17 @@ name: M3 App 28
 startup_form: Form1
 renamed: true
 runtime_options:
-  version: 2
+  version: 3
   client_version: '3'
   server_version: python3-sandbox
   server_spec: {base: python310-standard}
+  legacy_features: {class_names: true, bootstrap3: true, __dict__: true, root_container: true}
 dependencies:
 - dep_id: dep_gqlhr7sei7ys7
-  version: {dev: false}
+  version: {dev: true}
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+native_deps: null
