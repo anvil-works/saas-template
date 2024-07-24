@@ -8,5 +8,11 @@ runtime_options:
   client_version: '3'
   server_version: python3-sandbox
   server_spec: {base: python310-standard}
-dependencies: []
-services: []
+dependencies:
+- dep_id: dep_gqlhr7sei7ys7
+  version: {dev: false}
+  resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
