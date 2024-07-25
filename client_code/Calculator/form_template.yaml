@@ -2,7 +2,25 @@ layout: {type: 'form:HomepageLayout'}
 is_package: true
 components_by_slot:
   content_slot:
-  - name: text_1
-    properties: {text: Here is some text}
-    type: form:dep_gqlhr7sei7ys7:Components.Text
+  - name: card_1
+    properties: {}
+    type: form:dep_gqlhr7sei7ys7:Components.Card
     layout_properties: {}
+    components:
+    - name: heading_1
+      properties: {text: Percentage of calculator, align: center}
+      type: form:dep_gqlhr7sei7ys7:Components.Heading
+      layout_properties: {slot: card-content-slot}
+    - name: rich_text_1
+      properties: {content: '{number_1} is what percentage of {number_2}?', align: center}
+      type: RichText
+      layout_properties: {slot: card-content-slot}
+      components:
+      - name: number_1_textbox
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:Components.TextInput.TextField
+        layout_properties: {slot: number_1}
+      - name: number_2_textbox
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:Components.TextInput.TextField
+        layout_properties: {slot: number_2}
