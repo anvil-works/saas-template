@@ -18,13 +18,13 @@ services:
   client_config: {}
   server_config: {}
 - source: /runtime/services/anvil/users.yml
-  client_config: {allow_signup: false, enable_automatically: true, use_email: true, confirm_email: true}
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true, confirm_email: false}
   server_config: {user_table: users}
 - source: /runtime/services/anvil/secrets.yml
   client_config: {}
   server_config: {}
 native_deps: null
-startup: {type: form, module: HomepageLayout}
+startup: {type: form, module: LoginPage}
 db_schema:
   users:
     client: none
@@ -48,6 +48,9 @@ db_schema:
     - name: confirmed_email
       admin_ui: {order: 5, width: 200}
       type: bool
+    - name: signed_up
+      admin_ui: {order: 6, width: 200}
+      type: datetime
     title: Users
 secrets:
   stripe_test_api_key:

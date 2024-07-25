@@ -15,4 +15,5 @@ components:
     properties: {align: center, text: Login, appearance: filled}
     type: form:dep_gqlhr7sei7ys7:Components.Button
     layout_properties: {slot: card-content-slot}
+    event_bindings: {click: login_button_click}
 is_package: true
