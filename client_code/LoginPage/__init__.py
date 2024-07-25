@@ -25,7 +25,7 @@ class LoginPage(LoginPageTemplate):
     """This method is called when the HTML panel is shown on the screen"""
     if anvil.users.get_user():
       self.card_1.visible = False
-      open_form('calculator')
+      open_form('Calculator')
     else:
       # Stops the glitch in rendering components if we're only going to open the main form anyway
       self.card_1.visible = True

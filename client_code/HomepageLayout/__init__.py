@@ -8,15 +8,15 @@ import anvil.server
 
 from ..StripePricing import StripePricing
 
-from ..AccountManagement.AccountPage import AccountPage as AccountPage
 from ..user_permissions import PRODUCT_NAMES
+from ..AccountManagement import AccountPage
 
 class HomepageLayout(HomepageLayoutTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     
-    # Any code you write here will run befPercentage of calculatorore the form opens.
+    # Any code you write here will run before the form opens.
     self.user = anvil.users.get_user()
     self.check_upgrade_button()
 
