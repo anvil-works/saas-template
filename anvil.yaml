@@ -18,7 +18,7 @@ services:
   client_config: {}
   server_config: {}
 - source: /runtime/services/anvil/users.yml
-  client_config: {allow_signup: true, enable_automatically: true, use_email: true, confirm_email: false}
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true, confirm_email: false, allow_remember_me: true, remember_me_days: 30}
   server_config: {user_table: users}
 - source: /runtime/services/anvil/secrets.yml
   client_config: {}
@@ -51,6 +51,18 @@ db_schema:
     - name: signed_up
       admin_ui: {order: 6, width: 200}
       type: datetime
+    - name: subscription
+      admin_ui: {width: 200, order: 7}
+      type: string
+    - name: cancel_subscription_at_period_end
+      admin_ui: {width: 200, order: 8}
+      type: bool
+    - name: stripe_id
+      admin_ui: {width: 200, order: 9}
+      type: string
+    - name: remembered_logins
+      admin_ui: {order: 10, width: 200}
+      type: simpleObject
     title: Users
 secrets:
   stripe_test_api_key:

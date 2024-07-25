@@ -19,7 +19,7 @@ class LoginPage(LoginPageTemplate):
     """This method is called when the button is clicked"""
     user = anvil.users.login_with_form(allow_cancel=True, show_signup_option=True, allow_remembered=True)
     if user:
-      open_form('Main')
+      open_form('Calculator')
       
   def form_show(self, **event_args):
     """This method is called when the HTML panel is shown on the screen"""
