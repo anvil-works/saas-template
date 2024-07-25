@@ -9,7 +9,7 @@ import anvil.server
 from ..StripePricing import StripePricing
 
 from ..AccountManagement import AccountPage as AccountPage
-# from ..user_permissions import PRODUCT_NAMES
+from ..user_permissions import PRODUCT_NAMES
 
 class HomepageLayout(HomepageLayoutTemplate):
   def __init__(self, **properties):
@@ -20,8 +20,8 @@ class HomepageLayout(HomepageLayoutTemplate):
     self.user = anvil.users.get_user()
     self.check_upgrade_button()
 
-    # # TEMPLATE EXPLANATION ONLY - DELETE ROWS 23-24 WHEN YOU'RE READY
-    # self.TEMPLATE_EXPLANATION()
+    # TEMPLATE EXPLANATION ONLY - DELETE ROWS 23-24 WHEN YOU'RE READY
+    self.TEMPLATE_EXPLANATION()
       
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -44,12 +44,12 @@ class HomepageLayout(HomepageLayoutTemplate):
     """This method is called when the button is clicked"""
     alert(AccountPage(), title=self.user["email"], dismissible=True, buttons=None)
 
-  # # TEMPLATE EXPLANATION ONLY - DELETE ROWS 47-55 WHEN YOU'RE READY    
-  # def TEMPLATE_EXPLANATION(self):
-  #   if anvil.users.get_user()["subscription"] in PRODUCT_NAMES and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
-  #     Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
-  #   elif anvil.users.get_user()["cancel_subscription_at_period_end"]:
-  #     Notification("You've cancelled your subscription and, once it expires, your user records subscription status will be updated.", title="Template Explanation", timeout=None, style="warning").show()
-  #     Notification("That's the tour of the app template complete. Now it's time for you to begin adding your own Stripe account details and finding out how to make the app your own. .", title="Template Explanation", timeout=None, style="warning").show()
-  #   else:
-  #     Notification("This is your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()
+  # TEMPLATE EXPLANATION ONLY - DELETE ROWS 47-55 WHEN YOU'RE READY    
+  def TEMPLATE_EXPLANATION(self):
+    if anvil.users.get_user()["subscription"] in PRODUCT_NAMES and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
+      Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
+    elif anvil.users.get_user()["cancel_subscription_at_period_end"]:
+      Notification("You've cancelled your subscription and, once it expires, your user records subscription status will be updated.", title="Template Explanation", timeout=None, style="warning").show()
+      Notification("That's the tour of the app template complete. Now it's time for you to begin adding your own Stripe account details and finding out how to make the app your own. .", title="Template Explanation", timeout=None, style="warning").show()
+    else:
+      Notification("This is your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()

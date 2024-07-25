@@ -11,7 +11,7 @@ components_by_slot:
       properties: {text: Percentage of calculator, align: center}
       type: form:dep_gqlhr7sei7ys7:Components.Heading
       layout_properties: {slot: card-content-slot}
-    - name: rich_text_1
+    - name: input_richtext
       properties: {content: '{number_1} is what percentage of {number_2}?', align: center}
       type: RichText
       layout_properties: {slot: card-content-slot}
@@ -24,3 +24,25 @@ components_by_slot:
         properties: {}
         type: form:dep_gqlhr7sei7ys7:Components.TextInput.TextField
         layout_properties: {slot: number_2}
+    - name: answer_rich_text
+      properties: {content: '{number_1} is {percentage} of {number_2}', align: center}
+      type: RichText
+      layout_properties: {slot: card-content-slot}
+      components:
+      - name: original_number_1
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:Components.Text
+        layout_properties: {slot: number_1}
+      - name: percentage_label
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:Components.Text
+        layout_properties: {slot: percentage}
+      - name: original_number_2
+        properties: {}
+        type: form:dep_gqlhr7sei7ys7:Components.Text
+        layout_properties: {slot: number_2}
+    - name: calculate_button
+      properties: {text: Calculate, align: center, appearance: filled}
+      type: form:dep_gqlhr7sei7ys7:Components.Button
+      layout_properties: {slot: card-content-slot}
+      event_bindings: {click: calculate_button_click}

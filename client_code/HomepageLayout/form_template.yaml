@@ -11,12 +11,15 @@ components_by_slot:
     properties: {text: Pricing}
     type: form:dep_gqlhr7sei7ys7:Components.Button
     layout_properties: {}
+    event_bindings: {click: pricing_button_click}
   - name: upgrade_button
     properties: {text: Upgrade}
     type: form:dep_gqlhr7sei7ys7:Components.Button
     layout_properties: {}
+    event_bindings: {click: upgrade_button_click}
   - name: account_button
     properties: {text: Account}
     type: form:dep_gqlhr7sei7ys7:Components.Button
     layout_properties: {}
+    event_bindings: {click: account_button_click}
 layout_metadata: {title: Homepage Layout}
