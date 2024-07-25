@@ -1,2 +1,8 @@
 layout: {type: 'form:HomepageLayout'}
 is_package: true
+components_by_slot:
+  content_slot:
+  - name: text_1
+    properties: {text: Here is some text}
+    type: form:dep_gqlhr7sei7ys7:Components.Text
+    layout_properties: {}

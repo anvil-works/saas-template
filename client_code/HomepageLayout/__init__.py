@@ -20,8 +20,8 @@ class HomepageLayout(HomepageLayoutTemplate):
     self.user = anvil.users.get_user()
     self.check_upgrade_button()
 
-    # TEMPLATE EXPLANATION ONLY - DELETE ROWS 23-24 WHEN YOU'RE READY
-    self.TEMPLATE_EXPLANATION()
+    # # TEMPLATE EXPLANATION ONLY - DELETE ROWS 23-24 WHEN YOU'RE READY
+    # self.TEMPLATE_EXPLANATION()
       
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
