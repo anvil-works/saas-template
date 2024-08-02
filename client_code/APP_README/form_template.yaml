@@ -20,7 +20,6 @@ container:
         <p>Before using this template, make sure you have the following:</p>
         <ul>
           <li>A <a href="https://dashboard.stripe.com/register" target="_blank">Stripe account</a></li>
-          <li>An Anvil <a href = "https://anvil.works/pricing" target="_blank">Personal Plan</a> or above</li>
           <li>Basic knowledge of Anvil (a great place to start is with Anvil's <a href="https://anvil.works/learn/tutorials/feedback-form" target="_blank">Feedback form tutorial</a>)</li>
         </ul>
         <br>

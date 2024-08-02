@@ -24,7 +24,7 @@ services:
   client_config: {}
   server_config: {}
 native_deps: null
-startup: {type: form, module: LoginPage}
+startup: {type: form, module: APP_README}
 db_schema:
   users:
     client: none
