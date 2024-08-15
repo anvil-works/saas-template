@@ -4,12 +4,12 @@ components_by_slot:
   content_slot:
   - name: card_1
     properties: {}
-    type: form:dep_gqlhr7sei7ys7:Components.Card
+    type: form:dep_gqlhr7sei7ys7:_Components.Card
     layout_properties: {}
     components:
     - name: heading_1
       properties: {text: Percentage of calculator, align: center}
-      type: form:dep_gqlhr7sei7ys7:Components.Heading
+      type: form:dep_gqlhr7sei7ys7:_Components.Heading
       layout_properties: {slot: card-content-slot}
     - name: input_richtext
       properties: {content: '{number_1} is what percentage of {number_2}?', align: center}
@@ -18,11 +18,11 @@ components_by_slot:
       components:
       - name: number_1_textbox
         properties: {}
-        type: form:dep_gqlhr7sei7ys7:Components.TextInput.TextField
+        type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
         layout_properties: {slot: number_1}
       - name: number_2_textbox
         properties: {}
-        type: form:dep_gqlhr7sei7ys7:Components.TextInput.TextField
+        type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
         layout_properties: {slot: number_2}
     - name: answer_rich_text
       properties: {content: '{number_1} is {percentage} of {number_2}', align: center}
@@ -31,18 +31,18 @@ components_by_slot:
       components:
       - name: original_number_1
         properties: {}
-        type: form:dep_gqlhr7sei7ys7:Components.Text
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
         layout_properties: {slot: number_1}
       - name: percentage_label
         properties: {}
-        type: form:dep_gqlhr7sei7ys7:Components.Text
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
         layout_properties: {slot: percentage}
       - name: original_number_2
         properties: {}
-        type: form:dep_gqlhr7sei7ys7:Components.Text
+        type: form:dep_gqlhr7sei7ys7:_Components.Text
         layout_properties: {slot: number_2}
     - name: calculate_button
       properties: {text: Calculate, align: center, appearance: filled}
-      type: form:dep_gqlhr7sei7ys7:Components.Button
+      type: form:dep_gqlhr7sei7ys7:_Components.Button
       layout_properties: {slot: card-content-slot}
       event_bindings: {click: calculate_button_click}
