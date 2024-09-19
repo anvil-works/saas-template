@@ -1,5 +1,5 @@
+components: []
 container:
-  type: HtmlTemplate
   properties:
     html: |-
       <div style="padding:20px; font-size:20px;">
@@ -19,7 +19,7 @@ container:
         <h2>Prerequisites</h2>
         <p>Before using this template, make sure you have the following:</p>
         <ul>
-          <li>A <a href="https://dashboard.stripe.com/register" target="_blank">Stripe account</a></li>
+          <li>A <a href="https://dashboard.stripe.com/login" target="_blank">Stripe account</a></li>
           <li>Basic knowledge of Anvil (a great place to start is with Anvil's <a href="https://anvil.works/learn/tutorials/feedback-form" target="_blank">Feedback form tutorial</a>)</li>
         </ul>
         <br>
@@ -27,11 +27,11 @@ container:
         <h2>Configuring Stripe Integration</h2>
         <p>This template uses Stripe for payment processing and subscription management. To set up and use this template, follow these steps:</p>
         <ol>
-          <li><a href="https://dashboard.stripe.com/register" target="_blank">Register for a Stripe account</a> and login</li>
+          <li><a href="https://dashboard.stripe.com/login" target="_blank">Register for a Stripe account</a> and login</li>
           <li>Enter your <a href="https://support.stripe.com/questions/business-information-requirements-to-use-stripe?locale=en-GB" target="_blank">business details</a> to start capturing recurring revenue (or skip this step if you're only going to use <a href="https://stripe.com/docs/test-mode?locale=en-GB">Stripe's test mode</a>)</li>
           <li>Activate Stripe's <a href="https://stripe.com/docs/test-mode?locale=en-GB" target="_blank">test mode</a></li>
-          <li>Copy your <a href="https://stripe.com/docs/keys">Stripe account's Secret key</a> and, in this app's <a href="https://anvil.works/docs/security/encrypting-secret-data" target="_blank">Secrets service</a>, set the value of "stripe_test_api_key" to your key </li>
-          <li>In the Anvil app editor, publish this app and take a copy of the URL - we'll use this in step 6</li>
+          <li>Copy your <a href="https://stripe.com/docs/keys" target="_blank">Stripe account's Secret key</a> and, in this app's <a href="https://anvil.works/docs/security/encrypting-secret-data" target="_blank">Secrets service</a>, set the value of "stripe_test_api_key" to your key </li>
+          <li>In the Anvil app editor, <a href="https://anvil.works/docs/deployment-new-ide/quickstart" target="_blank">publish this app</a> and take a copy of the URL - we'll use this in step 6</li>
           <li>In the Stripe dashboard, <a href="https://dashboard.stripe.com/test/pricing-tables" target="_blank">navigate to the Products tab, select Pricing tables</a>, and create a <a href="https://stripe.com/docs/payments/checkout/pricing-table" target="_blank">pricing table</a>.</li>
             <ol type="a">
               <li>Create a <a href="https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-product" target="_blank">product</a> called "Personal"</li>
@@ -93,5 +93,5 @@ container:
           <li></li>
         </ol>
       </body>
-components: []
+  type: HtmlTemplate
 is_package: true

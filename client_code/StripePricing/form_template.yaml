@@ -1,5 +1,5 @@
+components: []
 container:
-  type: HtmlTemplate
   properties:
     html: |-
       <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
@@ -9,5 +9,5 @@ container:
         publishable-key=""
       >
       </stripe-pricing-table>
-components: []
+  type: HtmlTemplate
 is_package: true

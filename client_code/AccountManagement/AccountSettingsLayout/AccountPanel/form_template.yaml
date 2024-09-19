@@ -1,59 +1,59 @@
-layout: {type: 'form:AccountManagement.AccountSettingsLayout'}
-is_package: true
 components_by_slot:
   settings_main_slot:
-  - name: name_heading
+  - layout_properties: {}
+    name: name_heading
     properties:
-      text: Name
       margin: [null, null, 2rem, null]
+      text: Name
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
-    layout_properties: {}
-  - name: name
+  - layout_properties: {}
+    name: name
     properties:
+      margin: [2rem, null, 2rem, null]
       text: |
         Name
-      margin: [2rem, null, 2rem, null]
     type: form:dep_gqlhr7sei7ys7:_Components.Text
-    layout_properties: {}
-  - name: change_name_link
+  - layout_properties: {}
+    name: change_name_link
     properties:
+      margin: [2rem, null, 2rem, null]
       text: Change name
       underline: false
-      margin: [2rem, null, 2rem, null]
     type: form:dep_gqlhr7sei7ys7:_Components.Link
-    layout_properties: {}
-  - name: email_label
+  - layout_properties: {}
+    name: email_label
     properties:
-      text: Email
       margin: [2rem, null, 2rem, null]
+      text: Email
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
-    layout_properties: {}
-  - name: email
+  - layout_properties: {}
+    name: email
     properties:
-      text: Email
       margin: [2rem, null, 2rem, null]
+      text: Email
     type: form:dep_gqlhr7sei7ys7:_Components.Text
-    layout_properties: {}
-  - name: change_email_link
+  - layout_properties: {}
+    name: change_email_link
     properties:
+      margin: [2rem, null, 2rem, null]
       text: Change email
       underline: false
-      margin: [2rem, null, 2rem, null]
     type: form:dep_gqlhr7sei7ys7:_Components.Link
+  - event_bindings: {click: reset_password_link_click}
     layout_properties: {}
-  - name: reset_password_link
+    name: reset_password_link
     properties:
+      margin: [2rem, null, 2rem, null]
       text: Reset password
       underline: false
-      margin: [2rem, null, 2rem, null]
     type: form:dep_gqlhr7sei7ys7:_Components.Link
-    layout_properties: {}
-    event_bindings: {click: reset_password_link_click}
-  - name: delete_account_link
+  - layout_properties: {}
+    name: delete_account_link
     properties:
-      underline: false
+      margin: [2rem, null, 2rem, null]
       text: Delete account
       text_color: darkred
-      margin: [2rem, null, 2rem, null]
+      underline: false
     type: form:dep_gqlhr7sei7ys7:_Components.Link
-    layout_properties: {}
+is_package: true
+layout: {type: 'form:AccountManagement.AccountSettingsLayout'}

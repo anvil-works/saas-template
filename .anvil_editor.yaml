@@ -1,26 +1,26 @@
 unique_ids:
+  assets:
+    standard-page.html: 2LEXNEUYAC4JEKSRIQH22MSRJ4NVBQDF
+    theme.css: SN3X4TDB4P3RZGACFTNERZ5SCAYITUYT
   forms:
-    Calculator: '1721838989058505303724298.55133'
-    AccountManagement.AccountSettingsLayout.AccountPanel.ChangeName: '172183784474318367276267.26542'
-    AccountManagement.AccountSettingsLayout.AccountPanel.ChangeEmail: '1721837741356237609649645.89236'
-    AccountManagement.AccountSettingsLayout.AccountPanel.DeleteAccountAlert: '1721837905106244423974689.07706'
-    AccountManagement.AccountSettingsLayout: '1721835010194434241435199.1625'
-    AccountManagement.AccountPage: '1721834730326568169185334.7349'
-    HomepageLayout: '172183394744075593203136.70181'
-    AccountManagement.AccountSettingsLayout.AccountPanel: '1721837316493557860169358.1865'
-    StripePricing: '1721834618690651542658275.706'
-    AccountManagement.AccountSettingsLayout.SubscriptionPanel: '17218384273761495510279.330703'
     APP_README: '172183491713516588994536.576029'
+    AccountManagement.AccountPage: '1721834730326568169185334.7349'
+    AccountManagement.AccountSettingsLayout: '1721835010194434241435199.1625'
+    AccountManagement.AccountSettingsLayout.AccountPanel: '1721837316493557860169358.1865'
+    AccountManagement.AccountSettingsLayout.AccountPanel.ChangeEmail: '1721837741356237609649645.89236'
+    AccountManagement.AccountSettingsLayout.AccountPanel.ChangeName: '172183784474318367276267.26542'
+    AccountManagement.AccountSettingsLayout.AccountPanel.DeleteAccountAlert: '1721837905106244423974689.07706'
+    AccountManagement.AccountSettingsLayout.SubscriptionPanel: '17218384273761495510279.330703'
+    Calculator: '1721838989058505303724298.55133'
+    HomepageLayout: '172183394744075593203136.70181'
     LoginPage: '1721839338292589321602334.4054'
+    StripePricing: '1721834618690651542658275.706'
   modules:
     AccountManagement: '1721834882393543352672694.3647'
     user_permissions: '1721839019330205569959987.51782'
+  scripts: {}
   server_modules:
     StripeFunctions: '1721839056586406793254106.41296'
     Subscriptions: '172183908030255239465181.31317'
     Users: '1721839093380176159741914.9996'
     Utils: '1721839103861525202133101.95264'
-  assets:
-    standard-page.html: 2LEXNEUYAC4JEKSRIQH22MSRJ4NVBQDF
-    theme.css: SN3X4TDB4P3RZGACFTNERZ5SCAYITUYT
-  scripts: {}

@@ -1,25 +1,25 @@
-layout: {type: 'form:dep_gqlhr7sei7ys7:NavigationDrawerLayout'}
+components_by_slot:
+  slot_2:
+  - event_bindings: {click: pricing_button_click}
+    layout_properties: {}
+    name: pricing_button
+    properties: {text: Pricing}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
+  - event_bindings: {click: upgrade_button_click}
+    layout_properties: {}
+    name: upgrade_button
+    properties: {text: Upgrade}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
+  - event_bindings: {click: account_button_click}
+    layout_properties: {}
+    name: account_button
+    properties: {text: Account}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
 is_package: true
+layout: {type: 'form:dep_gqlhr7sei7ys7:NavigationDrawerLayout'}
+layout_metadata: {title: Homepage Layout}
 slots:
   content_slot:
     index: 0
     set_layout_properties: {}
-    target: {type: slot, name: slot_1}
-components_by_slot:
-  slot_2:
-  - name: pricing_button
-    properties: {text: Pricing}
-    type: form:dep_gqlhr7sei7ys7:_Components.Button
-    layout_properties: {}
-    event_bindings: {click: pricing_button_click}
-  - name: upgrade_button
-    properties: {text: Upgrade}
-    type: form:dep_gqlhr7sei7ys7:_Components.Button
-    layout_properties: {}
-    event_bindings: {click: upgrade_button_click}
-  - name: account_button
-    properties: {text: Account}
-    type: form:dep_gqlhr7sei7ys7:_Components.Button
-    layout_properties: {}
-    event_bindings: {click: account_button_click}
-layout_metadata: {title: Homepage Layout}
+    target: {name: slot_1, type: slot}
