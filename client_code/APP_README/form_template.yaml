@@ -46,10 +46,16 @@ container:
               <li>Back in your <a href="https://dashboard.stripe.com/test/pricing-tables">Stripe dashboard</a> - Copy the "pricing-table-id" and paste it into the corresponding attribute in the StripePricing form's custom HTML</li>
               <li>Do the same with the "publishable-key"</li>
               <br>
+              <figure style="display: table;">
                 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-dashboard-pricing-table-code.png"/>
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Copy the table ID and key from here</i></figcaption>
+              </figure>
               <br><br>
               <br>
+              <figure style="display: table;">
                 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>And paste them here</i></figcaption>
+              </figure>
               <br><br>
             </ol>
           </li>
@@ -60,7 +66,7 @@ container:
                   <li>Open the <a href="https://dashboard.stripe.com/test/webhooks" target="_blank">Webhooks page</a> in Stripe and click Add endpoint.</li>
                   <li>Set the endpoint URL to your published app's URL with "/_/api/stripe/stripe_customer_created" on the end i.e. "https://my-saas.anvil.app/_/api/stripe/stripe_customer_created"</li>
                   <li>Then select "customer.created" under events to listen for.</li>
-                  <li>From now on, this will call the `stripe_customer_created` function in the StripeFunctions module every time a customer is created.</li>
+                  <li>From now on, this will call the `stripe_customer_created` function in your Anvil app's StripeFunctions module when a customer is created.</li>
                   <br>
                   <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/webhook-setup.png" />
                   <br><br>
@@ -69,16 +75,34 @@ container:
               <li> <b>Subscription Updated</b>
                 <ul>
                   <li>Add another endpoint in Stripe.</li>
-                  <li>Set the endpoint URL to your published app's URL with "/_/api/stripe/stripe_customer_created" on the end i.e. "https://my-saas.anvil.app/_/api/stripe/stripe_subscription_updated"</li>
+                  <li>Set the endpoint URL to your published app's URL with "/_/api/stripe/stripe_subscription_updated" on the end i.e. "https://my-saas.anvil.app/_/api/stripe/stripe_subscription_updated"</li>
                   <li>Then select "customer.subscription.updated" under events to listen for.</li>
                   <li>From now on, this will call the `stripe_subscription_updated` function in the StripeFunctions module every time a customer is created.</li>
                 </ul>
               </li>
               <br>
-              <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png" />
+              <figure style="display: table;">
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Your <a href="https://dashboard.stripe.com/test/webhooks" target="_blank">Stripe webhooks </a> should look like this</i></figcaption>
+              </figure>
               <br><br>
             </ol>
-          <li>Let's quickly set up a way for users to cancel their subscription. Go the Stripe dashboard and set up a <a href="https://dashboard.stripe.com/settings/billing/portal" target="_blank">customer portal</a>, copy the link, and update line 15 in this app's AccountManagement -> AccountSettings -> SubscriptionPanel to point the "update_subscription" component's URL to the copied link</li>
+          <li>Let's quickly set up a way for users to cancel their subscription.
+            <ol type="a">
+              <li>Go the Stripe dashboard and set up a <a href="https://dashboard.stripe.com/settings/billing/portal" target="_blank">customer portal</a>
+              <figure style="display: table;">
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/customer-portal-location.png" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Searching for the customer portal.</i></figcaption>
+              </figure>
+              </li>
+              <li>Activate the test link and copy it</li>
+              <li>Update line 15 in this app's AccountManagement -> AccountSettingsLayout -> SubscriptionPanel to point the "manage_subscription_link" component's URL to the copied link
+              <figure style="display: table;">
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/manage-subscription-button.png" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>The URL we need to update.</i></figcaption>
+              </figure>
+              </li>
+            </ol>
           <li>Lastly, in the Anvil editor, switch the startup Form from "APP_README" to "Main" </li>
         </ol>
         <p>With these steps completed, your Stripe integration is ready for testing.</p>
