@@ -32,7 +32,7 @@ container:
           <li>Activate Stripe's <a href="https://stripe.com/docs/test-mode?locale=en-GB" target="_blank">test mode</a></li>
           <li>Copy your <a href="https://stripe.com/docs/keys" target="_blank">Stripe account's Secret key</a> and, in this app's <a href="https://anvil.works/docs/security/encrypting-secret-data" target="_blank">Secrets service</a>, set the value of "stripe_test_api_key" to your key </li>
           <li>In the Anvil app editor, <a href="https://anvil.works/docs/deployment-new-ide/quickstart" target="_blank">publish this app</a> and take a copy of the URL - we'll use this in step 6</li>
-          <li>In the Stripe dashboard, <a href="https://dashboard.stripe.com/test/pricing-tables" target="_blank">navigate to the Products tab, select Pricing tables</a>, and create a <a href="https://stripe.com/docs/payments/checkout/pricing-table" target="_blank">pricing table</a>.</li>
+          <li>In the Stripe dashboard, <a href="https://dashboard.stripe.com/test/products?active=true" target="_blank">navigate to the Products catalogue</a>, select the <a href="https://dashboard.stripe.com/test/pricing-tables" target="_blank">Pricing tables tab</a>, and create a <a href="https://stripe.com/docs/payments/checkout/pricing-table" target="_blank">pricing table</a>.</li>
             <ol type="a">
               <li>Create a <a href="https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-product" target="_blank">product</a> called "Personal"</li>
               <li>Add one <a href="https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-price" target="_blank">price</a> to the Personal product</li>
@@ -45,6 +45,9 @@ container:
             <ol type="a">
               <li>Back in your <a href="https://dashboard.stripe.com/test/pricing-tables">Stripe dashboard</a> - Copy the "pricing-table-id" and paste it into the corresponding attribute in the StripePricing form's custom HTML</li>
               <li>Do the same with the "publishable-key"</li>
+              <br>
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-dashboard-pricing-table-code.png"/>
+              <br><br>
               <br>
                 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" />
               <br><br>
