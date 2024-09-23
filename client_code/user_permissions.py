@@ -7,7 +7,6 @@ from anvil import Notification, alert
 
 PRODUCT_NAMES = anvil.server.call("get_product_names")
 
-
 # A decorator function to display notifications that encourage people to upgrade
 def catch_permission_errors(func):
   def wrapper(self, *args, **kargs):
