@@ -46,11 +46,11 @@ class HomepageLayout(HomepageLayoutTemplate):
 
  # TEMPLATE EXPLANATION ONLY - DELETE ROWS 47-55 WHEN YOU'RE READY    
   def TEMPLATE_EXPLANATION(self):
-    print()
-    if anvil.users.get_user() and anvil.users.get_user()["subscription"] in PRODUCT_NAMES and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
-      Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
-    elif anvil.users.get_user() and anvil.users.get_user()["cancel_subscription_at_period_end"]:
-      Notification("You've cancelled your subscription and, once it expires, your user records subscription status will be updated.", title="Template Explanation", timeout=None, style="warning").show()
-      Notification("That's the tour of the app template complete. Now it's time for you to begin adding your own Stripe account details and finding out how to make the app your own. .", title="Template Explanation", timeout=None, style="warning").show()
-    else:
-      Notification("This is your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()
+    if not anvil.designer.in_designer:
+      if anvil.users.get_user() and anvil.users.get_user()["subscription"] in PRODUCT_NAMES and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
+        Notification("With your subscription set up, you can now use the calculator. Check the Users module in the template's server modules and the client code user_permissions module to see how the user permissions work.", title="Template Explanation", timeout=None, style="warning").show()
+      elif anvil.users.get_user() and anvil.users.get_user()["cancel_subscription_at_period_end"]:
+        Notification("You've cancelled your subscription and, once it expires, your user records subscription status will be updated.", title="Template Explanation", timeout=None, style="warning").show()
+        Notification("That's the tour of the app template complete. Now it's time for you to begin adding your own Stripe account details and finding out how to make the app your own. .", title="Template Explanation", timeout=None, style="warning").show()
+      else:
+        Notification("This is your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()
