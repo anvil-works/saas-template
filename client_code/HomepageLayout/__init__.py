@@ -7,8 +7,8 @@ import anvil.users
 import anvil.server
 
 from ..StripePricing import StripePricing
+from ..AccountManagement.AccountPage import AccountPage
 
-from ..AccountManagement import AccountPage as AccountPage
 from ..Stripe import PRODUCT_NAMES
 
 class HomepageLayout(HomepageLayoutTemplate):

@@ -17,7 +17,7 @@ def catch_permission_errors(func):
       Notification("Please upgrade your subscription to use this functionality.", title="Please upgrade your subscription", timeout=None).show()
       
       # TEMPLATE EXPLANATION ONLY - DELETE LINES 20-21 WHEN YOU'RE READY
-      Notification("Click on the upgrade button in the top right to be taken to Stripe's pricing page for this app", title="Template Explanation", timeout=None, style="warning").show()
+      Notification("Click on the upgrade button in the top left to be taken to Stripe's pricing page for this app", title="Template Explanation", timeout=None, style="warning").show()
     except anvil.users.AuthenticationFailed:
       Notification("Please log in to use this functionality.", title="Please log in", timeout=3).show()
   return wrapper

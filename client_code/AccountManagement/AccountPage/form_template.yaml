@@ -1,11 +1,15 @@
 components:
-- layout_properties: {grid_position: 'DXDGEG,UKPOWR'}
+- event_bindings: {click: settings_button_click}
+  layout_properties: {grid_position: 'DXDGEG,UKPOWR'}
   name: settings_button
   properties: {align: center, appearance: tonal, icon: settings, icon_align: right, text: Settings}
   type: form:dep_gqlhr7sei7ys7:_Components.Button
-- layout_properties: {grid_position: 'EWRHPF,NAUSBB'}
+- event_bindings: {click: logout_button_click}
+  layout_properties: {grid_position: 'EWRHPF,NAUSBB'}
   name: logout_button
   properties: {align: center, appearance: tonal, icon: exit_to_app, icon_align: right, text: Log out}
   type: form:dep_gqlhr7sei7ys7:_Components.Button
-container: {type: ColumnPanel}
+container:
+  event_bindings: {show: form_show}
+  type: ColumnPanel
 is_package: true
