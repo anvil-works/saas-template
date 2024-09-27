@@ -8,11 +8,11 @@ components_by_slot:
     - components:
       - layout_properties: {slot: number_1}
         name: number_1_textbox
-        properties: {}
+        properties: {appearance: outlined}
         type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
       - layout_properties: {slot: number_2}
         name: number_2_textbox
-        properties: {}
+        properties: {appearance: outlined}
         type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
       layout_properties: {slot: card-content-slot}
       name: input_richtext
@@ -42,7 +42,7 @@ components_by_slot:
       type: form:dep_gqlhr7sei7ys7:_Components.Button
     layout_properties: {}
     name: card_1
-    properties: {}
+    properties: {appearance: outlined}
     type: form:dep_gqlhr7sei7ys7:_Components.Card
 is_package: true
 layout: {type: 'form:HomepageLayout'}
