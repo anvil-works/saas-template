@@ -7,9 +7,10 @@ from anvil.tables import app_tables
 import anvil.server
 
 from .Subscriptions import has_subscription
+from .Stripe import PRODUCT_NAMES
 
 # Here's an example of a function that would require a paid subsciption
-@anvil.server.callable(require_user=has_subscription(["personal", "pro"]))
+@anvil.server.callable(require_user=has_subscription(PRODUCT_NAMES))
 def calculate_percentage_of(number, total_number):
     percentage = (number / total_number) * 100
     return percentage

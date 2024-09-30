@@ -14,4 +14,6 @@ class StripePricing(StripePricingTemplate):
 
     # Any code you write here will run before the form opens.
     pricing_table = self.dom_nodes['stripe-pricing-table']
+
+    # Passes the user's email to the Stripe checkout. This insures records match in both Stripe and the app.
     pricing_table.setAttribute("customer-email", anvil.users.get_user()["email"])
