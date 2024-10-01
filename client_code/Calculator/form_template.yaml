@@ -8,11 +8,11 @@ components_by_slot:
     - components:
       - layout_properties: {slot: number_1}
         name: number_1_textbox
-        properties: {appearance: outlined}
+        properties: {appearance: outlined, type: number}
         type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
       - layout_properties: {slot: number_2}
         name: number_2_textbox
-        properties: {appearance: outlined}
+        properties: {appearance: outlined, type: number}
         type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
       layout_properties: {slot: card-content-slot}
       name: input_richtext
