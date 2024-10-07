@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from ..AccountSettingsLayout.AccountPanel import AccountPanel
 
 class AccountPage(AccountPageTemplate):
   def __init__(self, **properties):
@@ -17,7 +18,7 @@ class AccountPage(AccountPageTemplate):
   def settings_button_click(self, **event_args):
     """This method is called when the component is clicked."""
     self.raise_event("x-close-alert")
-    alert(AccountSettings(), title=anvil.users.get_user()["email"], dismissible=True, buttons=None, large=True)
+    alert(AccountPanel(), title=anvil.users.get_user()["email"], dismissible=True, buttons=None, large=True)
 
   def logout_button_click(self, **event_args):
     """This method is called when the component is clicked."""
