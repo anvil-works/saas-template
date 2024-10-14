@@ -56,4 +56,4 @@ components_by_slot:
       underline: false
     type: form:dep_gqlhr7sei7ys7:_Components.Link
 is_package: true
-layout: {type: 'form:AccountManagement.AccountSettingsLayout'}
+layout: {type: 'form:AccountManagementOld.AccountSettingsLayout'}

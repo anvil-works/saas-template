@@ -4,19 +4,20 @@ unique_ids:
     theme.css: SN3X4TDB4P3RZGACFTNERZ5SCAYITUYT
   forms:
     APP_README: '172183491713516588994536.576029'
-    AccountManagement.AccountPage: '1721834730326568169185334.7349'
-    AccountManagement.AccountSettingsLayout: '1721835010194434241435199.1625'
-    AccountManagement.AccountSettingsLayout.AccountPanel: '1721837316493557860169358.1865'
-    AccountManagement.AccountSettingsLayout.AccountPanel.ChangeEmail: '1721837741356237609649645.89236'
-    AccountManagement.AccountSettingsLayout.AccountPanel.ChangeName: '172183784474318367276267.26542'
-    AccountManagement.AccountSettingsLayout.AccountPanel.DeleteAccountAlert: '1721837905106244423974689.07706'
-    AccountManagement.AccountSettingsLayout.SubscriptionPanel: '17218384273761495510279.330703'
+    AccountManagement: '1728912208468133337216935.46541'
+    AccountManagementOld.AccountPage: '1721834730326568169185334.7349'
+    AccountManagementOld.AccountSettingsLayout: '1721835010194434241435199.1625'
+    AccountManagementOld.AccountSettingsLayout.AccountPanel: '1721837316493557860169358.1865'
+    AccountManagementOld.AccountSettingsLayout.AccountPanel.ChangeEmail: '1721837741356237609649645.89236'
+    AccountManagementOld.AccountSettingsLayout.AccountPanel.ChangeName: '172183784474318367276267.26542'
+    AccountManagementOld.AccountSettingsLayout.AccountPanel.DeleteAccountAlert: '1721837905106244423974689.07706'
+    AccountManagementOld.AccountSettingsLayout.SubscriptionPanel: '17218384273761495510279.330703'
     Calculator: '1721838989058505303724298.55133'
     HomepageLayout: '172183394744075593203136.70181'
     LoginPage: '1721839338292589321602334.4054'
     StripePricing: '1721834618690651542658275.706'
   modules:
-    AccountManagement: '1721834882393543352672694.3647'
+    AccountManagementOld: '1721834882393543352672694.3647'
     Stripe: '1727359938617245030744286.2921'
     user_permissions: '1721839019330205569959987.51782'
   scripts: {}
