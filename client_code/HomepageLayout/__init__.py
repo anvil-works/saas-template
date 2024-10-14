@@ -7,7 +7,6 @@ import anvil.users
 import anvil.server
 
 from ..StripePricing import StripePricing
-from ..Calculator import Calculator
 
 from ..Stripe import PRODUCT_NAMES
 
