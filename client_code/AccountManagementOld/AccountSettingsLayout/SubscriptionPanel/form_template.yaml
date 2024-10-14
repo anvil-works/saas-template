@@ -1,7 +1,0 @@
-components:
-- layout_properties: {full_width_row: true, grid_position: 'AIXYNI,WPBOPF'}
-  name: manage_subscription_link
-  properties: {italic: false, text: Manage your subscription, underline: false, url: 'https://billing.stripe.com/p/login/test_fZedRW4ln9fCatObII'}
-  type: form:dep_gqlhr7sei7ys7:_Components.Link
-container: {type: ColumnPanel}
-is_package: true
