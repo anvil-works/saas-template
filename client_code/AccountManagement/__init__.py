@@ -6,6 +6,10 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+from .ChangeName import ChangeName
+from .ChangeEmail import ChangeEmail
+from .DeleteAccountAlert import DeleteAccountAlert
+
 
 class AccountManagement(AccountManagementTemplate):
   def __init__(self, **properties):
