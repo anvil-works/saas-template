@@ -3,7 +3,8 @@ components:
   name: name_text_box
   properties: {error: false, placeholder: Name}
   type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
-- layout_properties: {full_width_row: true, grid_position: 'JDHRCQ,RWECMV'}
+- event_bindings: {click: save_button_click}
+  layout_properties: {full_width_row: true, grid_position: 'JDHRCQ,RWECMV'}
   name: save_button
   properties: {align: right, appearance: filled, text: Save}
   type: form:dep_gqlhr7sei7ys7:_Components.Button

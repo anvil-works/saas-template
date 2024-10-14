@@ -1,2 +1,57 @@
+components_by_slot:
+  content_slot:
+  - layout_properties: {}
+    name: name_heading
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Name
+    type: form:dep_gqlhr7sei7ys7:_Components.Heading
+  - layout_properties: {}
+    name: name_text
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Name
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - layout_properties: {}
+    name: change_name_link
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Change name
+    type: form:dep_gqlhr7sei7ys7:_Components.Link
+  - layout_properties: {}
+    name: email_heading
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Email
+    type: form:dep_gqlhr7sei7ys7:_Components.Heading
+  - event_bindings: {show: email_text_show}
+    layout_properties: {}
+    name: email_text
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Email
+    type: form:dep_gqlhr7sei7ys7:_Components.Text
+  - event_bindings: {click: change_email_link_click}
+    layout_properties: {}
+    name: change_email_link
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Change email
+    type: form:dep_gqlhr7sei7ys7:_Components.Link
+  - event_bindings: {click: reset_password_link_click}
+    layout_properties: {}
+    name: reset_password_link
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Reset password
+    type: form:dep_gqlhr7sei7ys7:_Components.Link
+  - layout_properties: {}
+    name: delete_account_link
+    properties:
+      margin: [2rem, null, 2rem, null]
+      text: Delete account
+      text_color: theme:Error
+      visible: true
+    type: form:dep_gqlhr7sei7ys7:_Components.Link
 is_package: true
 layout: {type: 'form:HomepageLayout'}
