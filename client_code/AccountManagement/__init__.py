@@ -50,8 +50,6 @@ class AccountManagement(AccountManagementTemplate):
     if alert(DeleteAccountAlert(), buttons=None, large=True):
       anvil.server.call('delete_user')
       anvil.users.logout()
-      # Close Account Settings page
-      self.parent.parent.parent.raise_event("x-close-alert", value=True)
       open_form('LoginPage')
 
   def form_show(self, **event_args):
