@@ -39,8 +39,11 @@ class AccountManagement(AccountManagementTemplate):
 
   def reset_password_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    anvil.users.send_password_reset_email(self.user["email"])
-    alert("A password reset email has been sent to your inbox.", title="Password reset email sent")
+    if confirm("Resetting your password will send a reset email to your inbox and log you out. Do you want to continue?"):
+      anvil.users.send_password_reset_email(self.user["email"])
+      alert("A password reset email has been sent to your inbox.", title="Password reset email sent")
+      anvil.users.logout()
+      open_form("LoginPage")
 
   def delete_account_link_click(self, **event_args):
     """This method is called when the button is clicked"""
