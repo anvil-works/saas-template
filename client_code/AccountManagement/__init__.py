@@ -16,10 +16,11 @@ class AccountManagement(AccountManagementTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens
+    self.user = anvil.users.get_user()
 
   def change_name_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    new_name = alert(ChangeName(item=anvil.users.get_user()["name"]), title="Change name", buttons=None, dismissible=True)
+    new_name = alert(ChangeName(item=self.user["name"]), title="Change name", buttons=None, dismissible=True)
     if new_name:
       anvil.server.call('change_name', new_name)
       self.name_text.text = new_name
@@ -30,7 +31,7 @@ class AccountManagement(AccountManagementTemplate):
 
   def change_email_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    new_email = alert(ChangeEmail(item=anvil.users.get_user()["email"]), title="Change email", buttons=None, dismissible=True)
+    new_email = alert(ChangeEmail(item=self.user["email"]), title="Change email", buttons=None, dismissible=True)
     if new_email:
       anvil.server.call('change_email', new_email)
       self.email_text.text = new_email
@@ -52,12 +53,12 @@ class AccountManagement(AccountManagementTemplate):
 
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
-    name = anvil.users.get_user()["name"]
+    name = self.user["name"]
     if name:
-      self.name_text.text = anvil.users.get_user()["name"]
+      self.name_text.text = self.user["name"]
     else:
       self.name_text.text = "-"
-    self.email_text.text = anvil.users.get_user()["email"]
+    self.email_text.text = self.user["email"]
     
 
 
