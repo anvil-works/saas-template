@@ -33,6 +33,7 @@ def get_prices():
 
 @anvil.server.callable
 def get_product_names():
+  print("Get product names called")
   try:
       # Retrieve a list of products from the Stripe API
       products = stripe.Product.list()  # You can adjust the limit as needed
@@ -43,8 +44,6 @@ def get_product_names():
   except stripe.error.StripeError as e:
       print(f"Error: {e}")
       return []
-
-
 
 @anvil.server.http_endpoint('/stripe/stripe_customer_created')
 def stripe_customer_created():
