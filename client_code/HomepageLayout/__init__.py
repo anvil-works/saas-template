@@ -8,7 +8,7 @@ import anvil.server
 
 from ..StripePricing import StripePricing
 
-# from ..Stripe import PRODUCT_NAMES
+from ..Stripe import PRODUCT_NAMES
 
 class HomepageLayout(HomepageLayoutTemplate):
   def __init__(self, **properties):
