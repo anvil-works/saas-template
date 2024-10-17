@@ -8,14 +8,12 @@ from anvil.tables import app_tables
 
 from ..user_permissions import catch_permission_errors
 
-
 class Calculator(CalculatorTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-
   
   # Catch_permission_errors catches excpetions that are thrown by a user not being subscribed and gives them a notification to upgrade
   @catch_permission_errors
