@@ -72,5 +72,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/email.yml
-startup: {module: LoginPage, type: form}
+startup: {module: APP_README, type: form}
 startup_form: null
