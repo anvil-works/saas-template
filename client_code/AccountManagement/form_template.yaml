@@ -12,7 +12,8 @@ components_by_slot:
       margin: [2rem, null, 2rem, null]
       text: Name
     type: form:dep_gqlhr7sei7ys7:_Components.Text
-  - layout_properties: {}
+  - event_bindings: {click: change_name_link_click}
+    layout_properties: {}
     name: change_name_link
     properties:
       margin: [2rem, null, 2rem, null]
