@@ -1,6 +1,136 @@
 components: []
 container:
   properties:
-    html: "<style>\nli, ol, ul {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n</style>\n<div style=\"padding:20px; font-size:20px;\">\n  <h1>Getting Started</h1>\n  <p>\n    Welcome to Anvil's SaaS template! This README is your guide to getting started with the template, understanding its functionality, and starting to develop the template further. To make the most of the provided README hyperlinks, simply click on 'Run in new tab' located in the top right of the editor and follow the instructions below.\n  </p>\n  <br>\n  <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/misc-assets/run-in-new-tab.svg\" height=\"150px\"/>\n  <br>\n  <br>\n  <p>If you prefer to access this information outside of the Anvil editor, you can also find a <a href=\"https://anvil.works\" target=\"_blank\">full guide here</a>.</p>\n  <br>\n  <p>Let's get started!</p></p>\n  <br>\n  <hr>\n  <h2>Prerequisites</h2>\n  <p>Before using this template, make sure you have the following:</p>\n  <ul>\n    <li>A <a href=\"https://dashboard.stripe.com/login\" target=\"_blank\">Stripe account</a></li>\n    <li>Basic knowledge of Anvil (a great place to start is with Anvil's <a href=\"https://anvil.works/learn/tutorials/feedback-form\" target=\"_blank\">Feedback form tutorial</a>)</li>\n  </ul>\n  <br>\n  <hr>\n  <h2>Configuring Stripe Integration</h2>\n  <p>This template uses Stripe for payment processing and subscription management. To set up and use this template, follow these steps:</p>\n  <ol>\n    <li><a href=\"https://dashboard.stripe.com/login\" target=\"_blank\">Register for a Stripe account</a> and login</li>\n    <li>Enter your <a href=\"https://support.stripe.com/questions/business-information-requirements-to-use-stripe?locale=en-GB\" target=\"_blank\">business details</a> to start capturing recurring revenue (or skip this step if you're only going to use <a href=\"https://stripe.com/docs/test-mode?locale=en-GB\">Stripe's test mode</a>)</li>\n    <li>Activate Stripe's <a href=\"https://stripe.com/docs/test-mode?locale=en-GB\" target=\"_blank\">test mode</a></li>\n    <li>Copy your <a href=\"https://stripe.com/docs/keys\" target=\"_blank\">Stripe account's Secret key</a> and, in this app's <a href=\"https://anvil.works/docs/security/encrypting-secret-data\" target=\"_blank\">App Secrets</a>, set the value of \"stripe_test_api_key\" to your key</li>\n    <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/app-secrets-location.png\" />\n    <li>In the Anvil app editor, <a href=\"https://anvil.works/docs/deployment-new-ide/quickstart\" target=\"_blank\">publish this app</a> and take a copy of the URL - we'll use this in step 6</li>\n    <li>In the Stripe dashboard, <a href=\"https://dashboard.stripe.com/test/products?active=true\" target=\"_blank\">navigate to the Products catalogue</a>, select the <a href=\"https://dashboard.stripe.com/test/pricing-tables\" target=\"_blank\">Pricing tables tab</a>, and create a <a href=\"https://stripe.com/docs/payments/checkout/pricing-table\" target=\"_blank\">pricing table</a>.</li>\n      <ol type=\"a\">\n        <li>Create a <a href=\"https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-product\" target=\"_blank\">product</a> called \"Personal\"</li>\n        <li>Add one <a href=\"https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-price\" target=\"_blank\">price</a> to the Personal product</li>\n        <li>In the payment settings for each product you will find a \"Confirmation page\" section. In that section select \"Don't show confirmation page\" and enter the URL of this app that we copied in step 5.</li>\n        <br>\n            <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/pricing-table.png\" />\n            <br><br>\n      </ol>\n    <li>Stripe's website should take you to your <a href=\"https://dashboard.stripe.com/test/pricing-tables\">pricing table's page (if not, follow this link and select your pricing table)</a>. We need to add the details of this to our SaaS app.\n      <figure style=\"display: table;\">\n        <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-dashboard-pricing-table-code.png\"/>\n        <figcaption style=\"display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;\"><i>The <a href=\"https://dashboard.stripe.com/test/pricing-tables\">pricing table page</a></i></figcaption>\n      </figure>\n      <ol type=\"a\">\n        <li>Copy the code for the pricing table.</li>\n        <li>Open the StripePricing form in the Anvil editor and <a href=\"https://anvil.works/docs/ui/components/forms#HTML-Forms-&-Custom-HTML-Forms\" target=\"_blank\">edit the custom HTML</a></li>\n        <li>And paste the code it into the StripePricing form's custom HTML.</li>\n        <li>Lastly, add <code>anvil-name=\"stripe-pricing-table\"</code> to the stripe-pricing-table tag. The final HTML should look like this:</li>\n        <br><br>\n        <figure style=\"display: table;\">\n          <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png\" style=\"max-width: 90%;\" />\n          <figcaption style=\"display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;\"><i>Example of the finished StripePricing form's custom HTML</i></figcaption>\n        </figure>\n        <br><br>\n      </ol>\n    </li>\n    <li> We need Stripe to tell us when a new customer is created and when their subscription is updated, so we can update our Users table with the Stripe subscription details. We'll use webhooks to do this. <a href=\"https://stripe.com/docs/development/dashboard/register-webhook?locale=en-GB#add-a-webhook-endpoint\" target=\"_blank\">There is a guide to setting up webhooks in Stripe here</a> but let me give you brief instructions.\n      <ol type=\"a\">\n        <li> <b>Customer Created</b>\n          <ol type=\"i\">\n            <li>Open the <a href=\"https://dashboard.stripe.com/test/webhooks\" target=\"_blank\">Webhooks page</a> in Stripe and click the \"+ Add endpoint\" button.</li>\n            <li>Set the endpoint URL to your published app's URL with \"/_/api/stripe/stripe_customer_created\" on the end - i.e. \"https://my-saas.anvil.app/_/api/stripe/stripe_customer_created\".\n            <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/endpoint-url.png\" style=\"max-width: 40%;\"/>\n            </li>\n            <li>Then click \"+ select events\" and select \"customer.created\" under events to listen for. </br>\n            <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/searching-events.png\" style=\"max-width: 40%;\"/>\n            </li>\n            <li>From now on, this will call the `stripe_customer_created` function in your Anvil app's StripeFunctions module when a customer is created.</li>\n            <br>\n            <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/webhook-setup.png\" />\n            <br><br>\n          </ol>\n        </li>\n        <li> <b>Subscription Updated</b>\n          <ol type=\"i\">\n            <li>Add another endpoint in Stripe.</li>\n            <li>Set the endpoint URL to your published app's URL with \"/_/api/stripe/stripe_subscription_updated\" on the end i.e. \"https://my-saas.anvil.app/_/api/stripe/stripe_subscription_updated\"</li>\n            <li>Then select \"customer.subscription.updated\" under events to listen for.</li>\n            <li>From now on, this will call the `stripe_subscription_updated` function in the StripeFunctions module every time a customer is created.</li>\n          </ol>\n        </li>\n        <br>\n        <figure style=\"display: table;\">\n          <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png\" />\n          <figcaption style=\"display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;\"><i>Your <a href=\"https://dashboard.stripe.com/test/webhooks\" target=\"_blank\">Stripe webhooks </a> should look like this</i></figcaption>\n        </figure>\n        <br><br>\n      </ol>\n    <li>Let's quickly set up a way for users to cancel their subscription.\n      <ol type=\"a\">\n        <li>Go the Stripe dashboard and set up a <a href=\"https://dashboard.stripe.com/settings/billing/portal\" target=\"_blank\">customer portal</a>\n        <figure style=\"display: table;\">\n          <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/customer-portal-location.png\" />\n          <figcaption style=\"display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;\"><i>Searching for the customer portal.</i></figcaption>\n        </figure>\n        </li>\n        <li>Activate the test link and copy it</li>\n        <li>Update line 15 in this app's AccountManagement -> AccountSettingsLayout -> SubscriptionPanel to point the \"manage_subscription_link\" component's URL to the copied link\n        <figure style=\"display: table;\">\n          <img src=\"https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/manage-subscription-button.png\" />\n          <figcaption style=\"display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;\"><i>The URL we need to update.</i></figcaption>\n        </figure>\n        </li>\n      </ol>\n    <li>Lastly, in the Anvil editor, switch the <a href=\"https://anvil.works/docs/client/components/forms#the-startup-form-or-module\" target=\"_blank\">startup form</a> from \"APP_README\" to \"Main\" </li>\n  </ol>\n  <p>With these steps completed, your Stripe integration is ready for testing.</p>\n  <br>\n  <hr>\n  <h2>Testing this app</h2>\n  <p>To test the app, set the Login form to be the <a href=\"https://anvil.works/docs/client/components/forms#the-startup-form-or-module\" target=\"_blank\">\"startup form\"</a>. Then <a href=\"https://anvil.works/docs/editor#the-anvil-editor\" target=\"_blank\">run the app</a> and follow along with the in-app instruction notifications.</p>\n  <br>\n  <hr>\n  <h2>Making this app your own</h2>\n  <p>Now that your Stripe integration is set up and you've experienced the app from a user's perspective, it's time to make this app your own.</p>\n  <p>Let's start by removing all of the in-app instruction notifications:</p>\n  <ol>\n    <li>Search (<i>ctrl+shift+F</i>) for \"# TEMPLATE EXPLANATION ONLY\" comments and delete all the lines mentioned in the comment</li>\n    <li></li>\n  </ol>\n</body>\n\n  "
+    html: |-
+      <style>
+      li, ol, ul {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      </style>
+      <div style="padding:20px; font-size:20px;">
+        <h1>Getting Started</h1>
+        <p>
+          Welcome to Anvil's SaaS template! This README is your guide to getting started with the template, understanding its functionality, and starting to develop the template further. To make the most of the provided README hyperlinks, simply click on 'Run in new tab' located in the top right of the editor and follow the instructions below.
+        </p>
+        <br>
+        <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/misc-assets/run-in-new-tab.svg" height="150px"/>
+        <br>
+        <br>
+        <p>If you prefer to access this information outside of the Anvil editor, you can also find a <a href="https://anvil.works" target="_blank">full guide here</a>.</p>
+        <br>
+        <p>Let's get started!</p></p>
+        <br>
+        <hr>
+        <h2>Prerequisites</h2>
+        <p>Before using this template, make sure you have the following:</p>
+        <ul>
+          <li>A <a href="https://dashboard.stripe.com/login" target="_blank">Stripe account</a></li>
+          <li>Basic knowledge of Anvil (a great place to start is with Anvil's <a href="https://anvil.works/learn/tutorials/feedback-form" target="_blank">Feedback form tutorial</a>)</li>
+        </ul>
+        <br>
+        <hr>
+        <h2>Configuring Stripe Integration</h2>
+        <p>This template uses Stripe for payment processing and subscription management. To set up and use this template, follow these steps:</p>
+        <ol>
+          <li><a href="https://dashboard.stripe.com/login" target="_blank">Register for a Stripe account</a> and login</li>
+          <li>Enter your <a href="https://support.stripe.com/questions/business-information-requirements-to-use-stripe?locale=en-GB" target="_blank">business details</a> to start capturing recurring revenue (or skip this step if you're only going to use <a href="https://stripe.com/docs/test-mode?locale=en-GB">Stripe's test mode</a>)</li>
+          <li>Activate Stripe's <a href="https://stripe.com/docs/test-mode?locale=en-GB" target="_blank">test mode</a></li>
+          <li>Copy your <a href="https://stripe.com/docs/keys" target="_blank">Stripe account's Secret key</a> and, in this app's <a href="https://anvil.works/docs/security/encrypting-secret-data" target="_blank">App Secrets</a>, set the value of "stripe_test_api_key" to your key</li>
+          <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/app-secrets-location.png" />
+          <li>In the Anvil app editor, <a href="https://anvil.works/docs/deployment-new-ide/quickstart" target="_blank">publish this app</a> and take a copy of the URL - we'll use this in step 6</li>
+          <li>In the Stripe dashboard, <a href="https://dashboard.stripe.com/test/products?active=true" target="_blank">navigate to the Products catalogue</a>, select the <a href="https://dashboard.stripe.com/test/pricing-tables" target="_blank">Pricing tables tab</a>, and create a <a href="https://stripe.com/docs/payments/checkout/pricing-table" target="_blank">pricing table</a>.</li>
+            <ol type="a">
+              <li>Create a <a href="https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-product" target="_blank">product</a> called "Personal"</li>
+              <li>Add one <a href="https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-price" target="_blank">price</a> to the Personal product</li>
+              <li>In the payment settings for each product you will find a "Confirmation page" section. In that section select "Don't show confirmation page" and enter the URL of this app that we copied in step 5.</li>
+              <br>
+                  <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/pricing-table.png" />
+                  <br><br>
+            </ol>
+          <li>Stripe's website should take you to your <a href="https://dashboard.stripe.com/test/pricing-tables">pricing table's page (if not, follow this link and select your pricing table)</a>. We need to add the details of this to our SaaS app.
+            <figure style="display: table;">
+              <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-dashboard-pricing-table-code.png"/>
+              <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>The <a href="https://dashboard.stripe.com/test/pricing-tables">pricing table page</a></i></figcaption>
+            </figure>
+            <ol type="a">
+              <li>Copy the code for the pricing table.</li>
+              <li>Open the StripePricing form in the Anvil editor and <a href="https://anvil.works/docs/ui/components/forms#HTML-Forms-&-Custom-HTML-Forms" target="_blank">edit the custom HTML</a></li>
+              <li>And paste the code it into the StripePricing form's custom HTML.</li>
+              <li>Lastly, add <code>anvil-name="stripe-pricing-table"</code> to the stripe-pricing-table tag. The final HTML should look like this:</li>
+              <br><br>
+              <figure style="display: table;">
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" style="max-width: 90%;" />
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" style="max-width: 90%;" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Example of the finished StripePricing form's custom HTML</i></figcaption>
+              </figure>
+              <br><br>
+            </ol>
+          </li>
+          <li> We need Stripe to tell us when a new customer is created and when their subscription is updated, so we can update our Users table with the Stripe subscription details. We'll use webhooks to do this. <a href="https://stripe.com/docs/development/dashboard/register-webhook?locale=en-GB#add-a-webhook-endpoint" target="_blank">There is a guide to setting up webhooks in Stripe here</a> but let me give you brief instructions.
+            <ol type="a">
+              <li> <b>Customer Created</b>
+                <ol type="i">
+                  <li>Open the <a href="https://dashboard.stripe.com/test/webhooks" target="_blank">Webhooks page</a> in Stripe and click the "+ Add endpoint" button.</li>
+                  <li>Set the endpoint URL to your published app's URL with "/_/api/stripe/stripe_customer_created" on the end - i.e. "https://my-saas.anvil.app/_/api/stripe/stripe_customer_created".
+                  <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/endpoint-url.png" style="max-width: 40%;"/>
+                  </li>
+                  <li>Then click "+ select events" and select "customer.created" under events to listen for. </br>
+                  <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/searching-events.png" style="max-width: 40%;"/>
+                  </li>
+                  <li>From now on, this will call the `stripe_customer_created` function in your Anvil app's StripeFunctions module when a customer is created.</li>
+                  <br>
+                  <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/webhook-setup.png" />
+                  <br><br>
+                </ol>
+              </li>
+              <li> <b>Subscription Updated</b>
+                <ol type="i">
+                  <li>Add another endpoint in Stripe.</li>
+                  <li>Set the endpoint URL to your published app's URL with "/_/api/stripe/stripe_subscription_updated" on the end i.e. "https://my-saas.anvil.app/_/api/stripe/stripe_subscription_updated"</li>
+                  <li>Then select "customer.subscription.updated" under events to listen for.</li>
+                  <li>From now on, this will call the `stripe_subscription_updated` function in the StripeFunctions module every time a customer is created.</li>
+                </ol>
+              </li>
+              <br>
+              <figure style="display: table;">
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Your <a href="https://dashboard.stripe.com/test/webhooks" target="_blank">Stripe webhooks </a> should look like this</i></figcaption>
+              </figure>
+              <br><br>
+            </ol>
+          <li>Let's quickly set up a way for users to cancel their subscription.
+            <ol type="a">
+              <li>Go the Stripe dashboard and set up a <a href="https://dashboard.stripe.com/settings/billing/portal" target="_blank">customer portal</a>
+              <figure style="display: table;">
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/customer-portal-location.png" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Searching for the customer portal.</i></figcaption>
+              </figure>
+              </li>
+              <li>Activate the test link and copy it</li>
+              <li>Open the SaaS app's AccountManagement form and point the "manage_subscription_link" component's URL to the copied link
+              <figure style="display: table;">
+                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/manage-subscription-button.png" />
+                <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>The URL we need to update.</i></figcaption>
+              </figure>
+              </li>
+            </ol>
+          <li>Lastly, in the Anvil editor, switch the <a href="https://anvil.works/docs/client/components/forms#the-startup-form-or-module" target="_blank">startup form</a> from "APP_README" to "LoginPage" </li>
+        </ol>
+        <p>With these steps completed, your Stripe integration is ready for testing.</p>
+        <br>
+        <hr>
+        <h2>Testing this app</h2>
+        <p>To test the app, set the Login form to be the <a href="https://anvil.works/docs/client/components/forms#the-startup-form-or-module" target="_blank">"startup form"</a>. Then <a href="https://anvil.works/docs/editor#the-anvil-editor" target="_blank">run the app</a> and follow along with the in-app instruction notifications.</p>
+        <br>
+        <hr>
+        <h2>Making this app your own</h2>
+        <p>Now that your Stripe integration is set up and you've experienced the app from a user's perspective, it's time to make this app your own.</p>
+        <p>Let's start by removing all of the in-app instruction notifications:</p>
+        <ol>
+          <li>Search (<i>ctrl+shift+F</i>) for "# TEMPLATE EXPLANATION ONLY" comments and delete all the lines mentioned in the comment</li>
+          <li></li>
+        </ol>
+      </body>
   type: HtmlTemplate
 is_package: true
