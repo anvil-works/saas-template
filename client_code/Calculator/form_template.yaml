@@ -1,48 +1,51 @@
 components_by_slot:
   content_slot:
   - components:
-    - layout_properties: {slot: card-content-slot}
+    - layout_properties: {grid_position: 'JTSTTE,SFBYQC'}
       name: heading_1
       properties: {align: center, text: Percentage of calculator}
       type: form:dep_gqlhr7sei7ys7:_Components.Heading
-    - components:
-      - layout_properties: {slot: number_1}
-        name: number_1_textbox
-        properties: {appearance: outlined, type: number}
-        type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
-      - layout_properties: {slot: number_2}
-        name: number_2_textbox
-        properties: {appearance: outlined, type: number}
-        type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
-      layout_properties: {slot: card-content-slot}
-      name: input_richtext
-      properties: {align: center, content: '{number_1} is what percentage of {number_2}?'}
-      type: RichText
-    - components:
-      - layout_properties: {slot: number_1}
-        name: original_number_1
-        properties: {}
-        type: form:dep_gqlhr7sei7ys7:_Components.Text
-      - layout_properties: {slot: percentage}
-        name: percentage_label
-        properties: {}
-        type: form:dep_gqlhr7sei7ys7:_Components.Text
-      - layout_properties: {slot: number_2}
-        name: original_number_2
-        properties: {}
-        type: form:dep_gqlhr7sei7ys7:_Components.Text
-      layout_properties: {slot: card-content-slot}
-      name: answer_rich_text
-      properties: {align: center, content: '{number_1} is {percentage} of {number_2}', visible: false}
-      type: RichText
-    - event_bindings: {click: calculate_button_click}
-      layout_properties: {slot: card-content-slot}
-      name: calculate_button
-      properties: {align: center, appearance: filled, text: Calculate}
-      type: form:dep_gqlhr7sei7ys7:_Components.Button
+    - layout_properties: {grid_position: 'ZIIPHL,PWJGMR'}
+      name: number_1_textbox
+      properties: {appearance: outlined, type: number}
+      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
+    - layout_properties: {grid_position: 'ZIIPHL,CGNAHN'}
+      name: text_1
+      properties: {align: center, text: is what percentage of}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
+    - layout_properties: {grid_position: 'ZIIPHL,AZQDDF'}
+      name: number_2_textbox
+      properties: {appearance: outlined, type: number}
+      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextField
+    - layout_properties: {grid_position: 'ZIIPHL,NWEHXA'}
+      name: text_2
+      properties: {text: '?'}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
     layout_properties: {}
-    name: card_1
-    properties: {appearance: outlined}
-    type: form:dep_gqlhr7sei7ys7:_Components.Card
+    name: column_panel_1
+    properties: {col_spacing: tiny, col_widths: '{"PWJGMR":25,"CGNAHN":15,"AZQDDF":25,"NWEHXA":10}'}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {slot: number_1}
+      name: original_number_1
+      properties: {}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
+    - layout_properties: {slot: percentage}
+      name: percentage_label
+      properties: {}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
+    - layout_properties: {slot: number_2}
+      name: original_number_2
+      properties: {}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
+    layout_properties: {}
+    name: answer_rich_text
+    properties: {align: center, content: '{number_1} is {percentage} of {number_2}', visible: false}
+    type: RichText
+  - event_bindings: {click: calculate_button_click}
+    layout_properties: {}
+    name: calculate_button
+    properties: {align: center, appearance: filled, text: Calculate}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
 is_package: true
 layout: {type: 'form:HomepageLayout'}
