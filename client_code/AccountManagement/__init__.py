@@ -25,8 +25,8 @@ class AccountManagement(AccountManagementTemplate):
       self.name_text.text = new_name
       self.refresh_data_bindings()
 
-    # TEMPLATE EXPLANATION ONLY - DELETE ROW 44-45 WHEN YOU'RE READY
-    Notification("Now, you've seen how the template edits user information, let's click the subscriptions tab and then click cancel subscription.", title="Template Explanation", timeout=None, style="warning").show()
+    # TEMPLATE EXPLANATION ONLY - DELETE ROW 28-29 WHEN YOU'RE READY
+    Notification("Now that you've seen how the template handles editing user information, let’s explore how users can cancel a subscription. We'll do this using the Stripe Customer Portal we set up while setting up with this template. Click the Manage Subscription button, cancel your subscription amd go back to this app's homepage.", title="Template Explanation", timeout=None, style="warning").show()
 
   def change_email_link_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -59,6 +59,9 @@ class AccountManagement(AccountManagementTemplate):
     else:
       self.name_text.text = "-"
     self.email_text.text = self.user["email"]
+    # TEMPLATE EXPLANATION ONLY - DELETE DELETE ROWS 62-63 WHEN YOU'RE READY
+    Notification("Welcome to your app's account management page—a solid foundation for self-service account management that you can customize for your users. Start by trying to update your name.", title="Template Explanation", timeout=None, style="warning").show()
+    
     
 
 
