@@ -6,6 +6,8 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 
+from ..StripePricing import StripePricing
+
 from anvil import designer
 
 if anvil.designer.in_designer:

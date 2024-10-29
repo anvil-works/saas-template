@@ -19,6 +19,8 @@ components_by_slot:
     name: change_name_link
     properties:
       margin: [2rem, null, 2rem, null]
+      spacing:
+        margin: [null, null, '5', null]
       text: Change name
     type: form:dep_gqlhr7sei7ys7:_Components.Link
   - layout_properties: {}
@@ -41,31 +43,41 @@ components_by_slot:
     name: change_email_link
     properties:
       margin: [2rem, null, 2rem, null]
+      spacing:
+        margin: [null, null, '5', null]
       text: Change email
     type: form:dep_gqlhr7sei7ys7:_Components.Link
-  - components:
-    - event_bindings: {}
-      layout_properties: {slot: anvil-m3-link-slot}
-      name: manage_subscription_link
-      properties:
-        margin: [2rem, null, 2rem, null]
-        text: Manage subscription
-        url: ''
-      type: form:dep_gqlhr7sei7ys7:_Components.Link
+  - components: []
     event_bindings: {click: reset_password_link_click}
     layout_properties: {}
     name: reset_password_link
     properties:
       margin: [2rem, null, 2rem, null]
+      spacing:
+        margin: ['5', null, '5', null]
       text: Reset password
+    type: form:dep_gqlhr7sei7ys7:_Components.Link
+  - event_bindings: {}
+    layout_properties: {}
+    name: manage_subscription_link
+    properties:
+      margin: [2rem, null, 2rem, null]
+      spacing:
+        margin: ['5', null, '5', null]
+      text: Manage subscription
+      url: ''
     type: form:dep_gqlhr7sei7ys7:_Components.Link
   - layout_properties: {}
     name: delete_account_link
     properties:
       margin: [2rem, null, 2rem, null]
+      spacing:
+        margin: ['5', null, '5', null]
       text: Delete account
       text_color: theme:Error
       visible: true
     type: form:dep_gqlhr7sei7ys7:_Components.Link
 is_package: true
-layout: {type: 'form:HomepageLayout'}
+layout:
+  form_event_bindings: {show: form_show}
+  type: form:HomepageLayout
