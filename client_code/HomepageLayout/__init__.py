@@ -14,8 +14,6 @@ else:
   print("elsing")
   PRODUCT_NAMES = anvil.server.call("get_product_names")
 
-from ..StripePricing import StripePricing
-
 class HomepageLayout(HomepageLayoutTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
