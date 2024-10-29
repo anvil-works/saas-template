@@ -48,10 +48,10 @@ container:
                   <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/pricing-table.png" />
                   <br><br>
             </ol>
-          <li>Stripe's website should take you to your <a href="https://dashboard.stripe.com/test/pricing-tables">pricing table's page (if not, follow this link and select your pricing table)</a>. We need to add the details of this to our SaaS app.
+          <li>Stripe's website should take you to your <a href="https://dashboard.stripe.com/test/pricing-tables" target="_blank">pricing table's page (if not, follow this link and select your pricing table)</a>. We need to add the details of this to our SaaS app.
             <figure style="display: table;">
               <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-dashboard-pricing-table-code.png"/>
-              <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>The <a href="https://dashboard.stripe.com/test/pricing-tables">pricing table page</a></i></figcaption>
+              <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>The <a href="https://dashboard.stripe.com/test/pricing-tables" target="_blank">pricing table page</a></i></figcaption>
             </figure>
             <ol type="a">
               <li>Copy the code for the pricing table.</li>
