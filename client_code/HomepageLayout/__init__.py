@@ -20,11 +20,6 @@ class HomepageLayout(HomepageLayoutTemplate):
 
     # TEMPLATE EXPLANATION ONLY - DELETE ROWS 22-23 WHEN YOU'RE READY
     self.TEMPLATE_EXPLANATION()
-      
-  def pricing_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    alert(StripePricing(), large=True)
-    self.check_upgrade_button()
 
   def check_upgrade_button(self):
     self.user = anvil.users.get_user()
@@ -36,16 +31,7 @@ class HomepageLayout(HomepageLayoutTemplate):
     else:
       self.upgrade_button.visible = False
 
-  def upgrade_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    alert(StripePricing(), large=True)
-    self.check_upgrade_button()
-    
-  def account_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form("AccountManagement")
-
- # TEMPLATE EXPLANATION ONLY - DELETE ROWS 47-55 WHEN YOU'RE READY    
+ # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY    
   def TEMPLATE_EXPLANATION(self):
     if not anvil.designer.in_designer:
       if anvil.users.get_user() and anvil.users.get_user()["subscription"] in PRODUCT_NAMES and not anvil.users.get_user()["cancel_subscription_at_period_end"]:
@@ -57,12 +43,12 @@ class HomepageLayout(HomepageLayoutTemplate):
       else:
         Notification("This is your SaaS product's main page. For this template, we've created a very simple calculator that requires a subscription to use. Try using the calculator.", title="Template Explanation", timeout=None, style="warning").show()
 
-  def calculator_button_click(self, **event_args):
-    """This method is called when the component is clicked."""
-    open_form("Calculator")
-
-  def logout_button_click(self, **event_args):
-    """This method is called when the component is clicked."""
+  def logout_navigation_link_click(self, **event_args):
+    """This method is called when the component is clicked"""
     anvil.users.logout()
-    open_form("LoginPage")
+
+  def stripe_pricing_link_click(self, **event_args):
+    """This method is called when the component is clicked"""
+    alert(StripePricing(), large=True)
+    self.check_upgrade_button()
 
