@@ -1,30 +1,31 @@
 components_by_slot:
-  slot_2:
-  - event_bindings: {click: calculator_button_click}
+  nav_drawer:
+  - event_bindings: {click: logout_button_click}
     layout_properties: {}
-    name: calculator_button
-    properties: {appearance: text, icon: calculate, text: Calculator}
-    type: form:dep_gqlhr7sei7ys7:_Components.Button
-  - event_bindings: {click: pricing_button_click}
-    layout_properties: {}
-    name: pricing_button
-    properties: {appearance: text, icon: attach_money, text: Pricing}
-    type: form:dep_gqlhr7sei7ys7:_Components.Button
-  - event_bindings: {click: upgrade_button_click}
-    layout_properties: {}
-    name: upgrade_button
-    properties: {appearance: text, icon: arrow_upward, text: Upgrade}
+    name: logout_button
+    properties: {appearance: text, icon: logout, text: Log out}
     type: form:dep_gqlhr7sei7ys7:_Components.Button
   - event_bindings: {click: account_button_click}
     layout_properties: {}
     name: account_button
     properties: {appearance: text, icon: person_4, text: Account}
     type: form:dep_gqlhr7sei7ys7:_Components.Button
-  - event_bindings: {click: logout_button_click}
+  - event_bindings: {click: upgrade_button_click}
     layout_properties: {}
-    name: logout_button
-    properties: {appearance: text, icon: logout, text: Log out}
+    name: upgrade_button
+    properties: {appearance: text, icon: arrow_upward, text: Upgrade}
     type: form:dep_gqlhr7sei7ys7:_Components.Button
+  - event_bindings: {click: pricing_button_click}
+    layout_properties: {}
+    name: pricing_button
+    properties: {appearance: text, icon: attach_money, text: Pricing}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
+  - event_bindings: {click: calculator_button_click}
+    layout_properties: {}
+    name: calculator_button
+    properties: {appearance: text, icon: calculate, text: Calculator}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
+  slot_2: []
 is_package: true
 layout: {type: 'form:dep_gqlhr7sei7ys7:Layouts.NavigationDrawerLayout'}
 layout_metadata: {title: Homepage Layout}
@@ -32,4 +33,4 @@ slots:
   content_slot:
     index: 0
     set_layout_properties: {}
-    target: {name: slot_1, type: slot}
+    target: {name: content, type: slot}

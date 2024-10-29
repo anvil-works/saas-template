@@ -6,7 +6,9 @@ components_by_slot:
       margin: [2rem, null, 2rem, null]
       text: Name
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
-  - layout_properties: {}
+  - data_bindings:
+    - {code: 'self.user["name"] or "-"', property: text, writeback: false}
+    layout_properties: {}
     name: name_text
     properties:
       margin: [2rem, null, 2rem, null]
@@ -25,7 +27,9 @@ components_by_slot:
       margin: [2rem, null, 2rem, null]
       text: Email
     type: form:dep_gqlhr7sei7ys7:_Components.Heading
-  - event_bindings: {show: email_text_show}
+  - data_bindings:
+    - {code: 'self.user[''email'']', property: text, writeback: false}
+    event_bindings: {show: email_text_show}
     layout_properties: {}
     name: email_text
     properties:

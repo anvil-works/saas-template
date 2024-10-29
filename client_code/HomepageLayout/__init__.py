@@ -16,17 +16,18 @@ class HomepageLayout(HomepageLayoutTemplate):
     self.init_components(**properties)
     
     # Any code you write here will run before the form opens.
-    self.user = anvil.users.get_user()
     self.check_upgrade_button()
 
-    # TEMPLATE EXPLANATION ONLY - DELETE ROWS 23-24 WHEN YOU'RE READY
+    # TEMPLATE EXPLANATION ONLY - DELETE ROWS 22-23 WHEN YOU'RE READY
     self.TEMPLATE_EXPLANATION()
       
   def pricing_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
+    self.check_upgrade_button()
 
   def check_upgrade_button(self):
+    self.user = anvil.users.get_user()
     if self.user:
       if self.user["subscription"] == "Free" or not self.user["subscription"]:
         self.upgrade_button.visible = True
@@ -38,6 +39,7 @@ class HomepageLayout(HomepageLayoutTemplate):
   def upgrade_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     alert(StripePricing(), large=True)
+    self.check_upgrade_button()
     
   def account_button_click(self, **event_args):
     """This method is called when the button is clicked"""

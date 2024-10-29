@@ -29,4 +29,3 @@ class Calculator(CalculatorTemplate):
       Notification("Now you can use the calculator. Click the account button in the navbar to open the account settings.", title="Template Explanation", timeout=None, style="warning").show()
     else:
       Notification("Please enter two numbers.")
-
