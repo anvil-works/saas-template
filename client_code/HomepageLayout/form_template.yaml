@@ -26,7 +26,7 @@ components_by_slot:
     properties: {appearance: text, icon: logout, text: Log out}
     type: form:dep_gqlhr7sei7ys7:_Components.Button
 is_package: true
-layout: {type: 'form:dep_gqlhr7sei7ys7:NavigationDrawerLayout'}
+layout: {type: 'form:dep_gqlhr7sei7ys7:Layouts.NavigationDrawerLayout'}
 layout_metadata: {title: Homepage Layout}
 slots:
   content_slot:
