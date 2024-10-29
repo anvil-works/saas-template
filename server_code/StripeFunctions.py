@@ -13,7 +13,7 @@ import datetime
 
 # Set your secret key. Remember to switch to your live secret key in production.
 # See your keys here: https://dashboard.stripe.com/apikeys
-stripe.api_key = anvil.secrets.get_secret('stripe_test_api_key')
+stripe.api_key = anvil.secrets.get_secret('stripe_test_secret_api_key')
 
 # This is predicated on a flat 1:1 Product:Price relationship
 def get_prices():
@@ -33,7 +33,6 @@ def get_prices():
 
 @anvil.server.callable
 def get_product_names():
-  print("Get product names called")
   try:
       # Retrieve a list of products from the Stripe API
       products = stripe.Product.list()  # You can adjust the limit as needed

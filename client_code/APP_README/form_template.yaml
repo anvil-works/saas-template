@@ -11,7 +11,13 @@ container:
       <div style="padding:20px; font-size:20px;">
         <h1>Getting Started</h1>
         <p>
-          Welcome to Anvil's SaaS template! This README is your guide to getting started with the template, understanding its functionality, and starting to develop the template further. To make the most of the provided README hyperlinks, simply click on 'Run in new tab' located in the top right of the editor and follow the instructions below.
+          Welcome to Anvil’s SaaS template! This README will guide you through getting started with the template, understanding its features, and further developing it to suit your needs.
+        </p>
+        <p>
+          If you're looking to sell a product as an online service, this template is a perfect starting point. In this guide, we’ll walk through building a simple calculator as a sample product.
+        </p>
+        <p>
+          To make the most of the README's hyperlinks, simply click on 'Run in new tab' in the editor's top-right corner and follow the instructions below.
         </p>
         <br>
         <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/misc-assets/run-in-new-tab.svg" height="150px"/>
@@ -60,7 +66,6 @@ container:
               <li>Lastly, add <code>anvil-name="stripe-pricing-table"</code> to the stripe-pricing-table tag. The final HTML should look like this:</li>
               <br><br>
               <figure style="display: table;">
-                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" style="max-width: 90%;" />
                 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" style="max-width: 90%;" />
                 <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Example of the finished StripePricing form's custom HTML</i></figcaption>
               </figure>

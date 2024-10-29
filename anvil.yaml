@@ -44,10 +44,10 @@ db_schema:
 dependencies:
 - dep_id: dep_gqlhr7sei7ys7
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
-  version: {version_tag: v1.1.1}
-name: SaaS Template - M3
+  version: {version_tag: v1.1.3}
+name: SaaS Template
 native_deps: null
-package_name: SaaS_Template___M3
+package_name: SaaS_Template
 renamed: true
 runtime_options:
   client_version: '3'
@@ -56,7 +56,7 @@ runtime_options:
   server_version: python3-sandbox
   version: 3
 secrets:
-  stripe_test_api_key:
+  stripe_test_secret_api_key:
     type: secret
     value: {T4O5IQ35ZG7TTCZN: wKicTXysluYtsuFwBYK31Uq1YhX3Xedua/2NOqMILkSdO+vxMTel49STEStiie3I198EXBvuY9xYDXsH1ni1QdXB96Kst9LZm0JMPiNzyPn3kEAMu6wKSLB39Mc3uP+YZt/l/vsmDWREQ+FtgXcekPdaGAZJPMa4G+5eGTfURDdpD2Ifi5ezUtEX/VrBi41ZjLIVgYjzoLQS2s7VqDdqWUaAIzXUrCN5vR9y2LNszbSWQLTzrDBmIqz6ZKeAzricQdAez22e0SPYPg==}
 services:

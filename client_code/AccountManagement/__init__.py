@@ -12,28 +12,28 @@ from .DeleteAccountAlert import DeleteAccountAlert
 
 class AccountManagement(AccountManagementTemplate):
   def __init__(self, **properties):
+    self.user = anvil.users.get_user()
+    
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    
     # Any code you write here will run before the form opens
-    self.user = anvil.users.get_user()
 
   def change_name_link_click(self, **event_args):
     """This method is called when the link is clicked"""
     new_name = alert(ChangeName(item=self.user["name"]), title="Change name", buttons=None, dismissible=True)
     if new_name:
-      anvil.server.call('change_name', new_name)
-      self.name_text.text = new_name
+      self.user = anvil.server.call('change_name', new_name)
       self.refresh_data_bindings()
 
-    # TEMPLATE EXPLANATION ONLY - DELETE ROW 28-29 WHEN YOU'RE READY
+    # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
     Notification("Now that you've seen how the template handles editing user information, let’s explore how users can cancel a subscription. We'll do this using the Stripe Customer Portal we set up while setting up with this template. Click the Manage Subscription button, cancel your subscription amd go back to this app's homepage.", title="Template Explanation", timeout=None, style="warning").show()
 
   def change_email_link_click(self, **event_args):
     """This method is called when the link is clicked"""
     new_email = alert(ChangeEmail(item=self.user["email"]), title="Change email", buttons=None, dismissible=True)
     if new_email:
-      anvil.server.call('change_email', new_email)
-      self.email_text.text = new_email
+      self.user = anvil.server.call('change_email', new_email)
       self.refresh_data_bindings()
 
   def reset_password_link_click(self, **event_args):
@@ -53,16 +53,5 @@ class AccountManagement(AccountManagementTemplate):
 
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
-    name = self.user["name"]
-    if name:
-      self.name_text.text = self.user["name"]
-    else:
-      self.name_text.text = "-"
-    self.email_text.text = self.user["email"]
-    # TEMPLATE EXPLANATION ONLY - DELETE DELETE ROWS 62-63 WHEN YOU'RE READY
+    # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
     Notification("Welcome to your app's account management page—a solid foundation for self-service account management that you can customize for your users. Start by trying to update your name.", title="Template Explanation", timeout=None, style="warning").show()
-    
-    
-
-
-

@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
+self.user = anvil.users.get_user()
 
 class ChangeEmail(ChangeEmailTemplate):
   def __init__(self, **properties):
@@ -16,5 +17,4 @@ class ChangeEmail(ChangeEmailTemplate):
 
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('change_email', self.email_text_box.input_text)
-    self.raise_event("x-close-alert", value=self.email_text_box.input_text)
+    self.raise_event("x-close-alert", value=self.email_text_box.text)

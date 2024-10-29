@@ -8,16 +8,20 @@ import anvil.server
 
 from .StripeFunctions import delete_stripe_customer
 
+def has_subscription(user):
+  return user["subscription"] and user["subscription"] != "Free"
 
 @anvil.server.callable(require_user=True)
 def change_name(name):
   user = anvil.users.get_user()
   user["name"] = name
+  return user
 
 @anvil.server.callable(require_user=True)
 def change_email(email):
   user = anvil.users.get_user()
   user["email"] = email
+  return user
 
 @anvil.server.callable(require_user=True)
 def delete_user():
@@ -25,4 +29,5 @@ def delete_user():
   if user["stripe_id"]:
     delete_stripe_customer(user["stripe_id"])
   user.delete()
+  
 
