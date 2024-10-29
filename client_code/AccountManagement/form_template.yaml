@@ -46,7 +46,7 @@ components_by_slot:
       properties:
         margin: [2rem, null, 2rem, null]
         text: Manage subscription
-        url: https://billing.stripe.com/p/login/test_cN25nk2WmbRhceI3cc
+        url: ''
       type: form:dep_gqlhr7sei7ys7:_Components.Link
     event_bindings: {click: reset_password_link_click}
     layout_properties: {}

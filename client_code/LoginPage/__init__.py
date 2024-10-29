@@ -30,5 +30,5 @@ class LoginPage(LoginPageTemplate):
       # Stops the glitch in rendering components if we're only going to open the main form anyway
       self.card_1.visible = True
       
-      # TEMPLATE EXPLANATION ONLY - DELETE ROWS 31-32 WHEN YOU'RE READY
+      # TEMPLATE EXPLANATION ONLY - DELETE ROWS 33-34 WHEN YOU'RE READY
       Notification("Here's your SaaS app's login page. To start click login and then signup for an account.", title="Template Explanation", timeout=None, style="warning").show()
