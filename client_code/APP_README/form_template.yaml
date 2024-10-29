@@ -67,7 +67,6 @@ container:
               <br><br>
               <figure style="display: table;">
                 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" style="max-width: 90%;" />
-                <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png" style="max-width: 90%;" />
                 <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Example of the finished StripePricing form's custom HTML</i></figcaption>
               </figure>
               <br><br>
