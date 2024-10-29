@@ -11,11 +11,11 @@ def catch_permission_errors(func):
     try:
       return func(self)
     except anvil.server.PermissionDenied:
-      # TEMPLATE EXPLANATION ONLY - DELETE LINES 14-15 WHEN YOU'RE READY
+      # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
       Notification("Without a subscription, the calculator's function fails and users are shown a notification asking them to upgrade.", title="Template Explanation", timeout=None, style="warning").show()
       Notification("Please upgrade your subscription to use this functionality.", title="Please upgrade your subscription", timeout=None).show()
       
-      # TEMPLATE EXPLANATION ONLY - DELETE LINES 18-19 WHEN YOU'RE READY
+      # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
       Notification("Click on the upgrade button in the top left to be taken to Stripe's pricing page for this app", title="Template Explanation", timeout=None, style="warning").show()
     except anvil.users.AuthenticationFailed:
       Notification("Please log in to use this functionality.", title="Please log in", timeout=3).show()

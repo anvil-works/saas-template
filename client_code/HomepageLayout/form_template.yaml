@@ -25,7 +25,9 @@ components_by_slot:
     type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
   slot_2: []
 is_package: true
-layout: {type: 'form:dep_gqlhr7sei7ys7:Layouts.NavigationDrawerLayout'}
+layout:
+  properties: {show_sidesheet: false}
+  type: form:dep_gqlhr7sei7ys7:Layouts.NavigationDrawerLayout
 layout_metadata: {title: Homepage Layout}
 slots:
   content_slot:

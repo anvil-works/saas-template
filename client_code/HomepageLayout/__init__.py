@@ -6,9 +6,15 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 
-from ..StripePricing import StripePricing
+from anvil import designer
 
-from ..Stripe import PRODUCT_NAMES
+if anvil.designer.in_designer:
+  PRODUCT_NAMES = ["Personal"]
+else:
+  print("elsing")
+  PRODUCT_NAMES = anvil.server.call("get_product_names")
+
+from ..StripePricing import StripePricing
 
 class HomepageLayout(HomepageLayoutTemplate):
   def __init__(self, **properties):
@@ -16,20 +22,20 @@ class HomepageLayout(HomepageLayoutTemplate):
     self.init_components(**properties)
     
     # Any code you write here will run before the form opens.
-    self.check_upgrade_button()
+    self.check_upgrade_nav_link()
 
-    # TEMPLATE EXPLANATION ONLY - DELETE ROWS 22-23 WHEN YOU'RE READY
+    # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
     self.TEMPLATE_EXPLANATION()
 
-  def check_upgrade_button(self):
+  def check_upgrade_nav_link(self):
     self.user = anvil.users.get_user()
     if self.user:
       if self.user["subscription"] == "Free" or not self.user["subscription"]:
-        self.upgrade_button.visible = True
+        self.upgrade_navigation_link.visible = True
       else:
-        self.upgrade_button.visible = False
+        self.upgrade_navigation_link.visible = False
     else:
-      self.upgrade_button.visible = False
+      self.upgrade_navigation_link.visible = False
 
  # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY    
   def TEMPLATE_EXPLANATION(self):
@@ -50,5 +56,5 @@ class HomepageLayout(HomepageLayoutTemplate):
   def stripe_pricing_link_click(self, **event_args):
     """This method is called when the component is clicked"""
     alert(StripePricing(), large=True)
-    self.check_upgrade_button()
+    self.check_upgrade_nav_link()
 

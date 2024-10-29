@@ -26,7 +26,7 @@ class AccountManagement(AccountManagementTemplate):
       self.user = anvil.server.call('change_name', new_name)
       self.refresh_data_bindings()
 
-    # TEMPLATE EXPLANATION ONLY - DELETE ROW 29-30 WHEN YOU'RE READY
+    # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
     Notification("Now that you've seen how the template handles editing user information, let’s explore how users can cancel a subscription. We'll do this using the Stripe Customer Portal we set up while setting up with this template. Click the Manage Subscription button, cancel your subscription amd go back to this app's homepage.", title="Template Explanation", timeout=None, style="warning").show()
 
   def change_email_link_click(self, **event_args):

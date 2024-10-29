@@ -25,7 +25,7 @@ class Calculator(CalculatorTemplate):
       percentage = anvil.server.call('calculate_percentage_of', self.number_1_textbox.text, self.number_2_textbox.text)
       self.answer_text.text = f"{self.number_1_textbox.text} is {percentage}% of {self.number_2_textbox.text}"
       self.answer_text.visible = True
-      # TEMPLATE EXPLANATION ONLY - DELETE ROWS 28-29 WHEN YOU'RE READY
+      # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
       Notification("Now you can use the calculator. Click the account button in the navbar to open the account settings.", title="Template Explanation", timeout=None, style="warning").show()
     else:
       Notification("Please enter two numbers.")

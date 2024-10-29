@@ -27,5 +27,5 @@ class LoginPage(LoginPageTemplate):
     if anvil.users.get_user():
       open_form('Calculator')
     else:
-      # TEMPLATE EXPLANATION ONLY - DELETE ROWS 33-34 WHEN YOU'RE READY
+      # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
       Notification("Here's your SaaS app's login page. To start click login and then signup for an account.", title="Template Explanation", timeout=None, style="warning").show()
