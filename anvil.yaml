@@ -44,7 +44,7 @@ db_schema:
 dependencies:
 - dep_id: dep_gqlhr7sei7ys7
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
-  version: {version_tag: v1.1.1}
+  version: {version_tag: v1.1.3}
 name: SaaS Template - M3
 native_deps: null
 package_name: SaaS_Template___M3

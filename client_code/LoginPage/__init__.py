@@ -20,15 +20,12 @@ class LoginPage(LoginPageTemplate):
     user = anvil.users.login_with_form(allow_cancel=True, show_signup_option=True, allow_remembered=True)
     if user:
       open_form('Calculator')
-      
+
+  # TODO check if this works in init, move if it does
   def form_show(self, **event_args):
     """This method is called when the HTML panel is shown on the screen"""
     if anvil.users.get_user():
-      self.card_1.visible = False
       open_form('Calculator')
     else:
-      # Stops the glitch in rendering components if we're only going to open the main form anyway
-      self.card_1.visible = True
-      
       # TEMPLATE EXPLANATION ONLY - DELETE ROWS 33-34 WHEN YOU'RE READY
       Notification("Here's your SaaS app's login page. To start click login and then signup for an account.", title="Template Explanation", timeout=None, style="warning").show()
