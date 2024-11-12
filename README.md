@@ -1,88 +1,181 @@
-# About This [Anvil](https://anvil.works/?utm_source=github:app_README) App
+# SaaS with Stripe and Anvil
 
-### Build web apps with nothing but Python.
+Anvil's SaaS (Software as a Service) template is a solid starting point and foundation for your subscription-based SaaS product. This template uses Stripe's API for subscription management, and simplifies user permissions with out-of-the-box Python decorators. It's an ideal starting point for your project.
 
-The app in this repository is built with [Anvil](https://anvil.works?utm_source=github:app_README), the framework for building web apps with nothing but Python. You can clone this app into your own Anvil account to use and modify.
+## Contents
 
-Below, you will find:
-- [How to open this app](#opening-this-app-in-anvil-and-getting-it-online) in Anvil and deploy it online
-- Information [about Anvil](#about-anvil)
-- And links to some handy [documentation and tutorials](#tutorials-and-documentation)
+In this guide, we’ll walk through the key components of the template, covering:
 
-## Opening this app in Anvil and getting it online
+- **Introduction**: Briefly learn about Anvil, SaaS apps, and the benefits of using this template.
+- **Prerequisites**: What you’ll need to get started.
+- **Template Structure**: A high-level overview of the app’s architecture and Stripe integration.
+- **Template Setup**: Step-by-step instructions to get the template up and running with your account.
+- **Testing The App**: Test the integration and explore the template’s functionality from a user’s perspective.
+- **Make The app Your Own**:
+- **Extending the Template**: Tips and guidance for building on and customizing the template further.
 
-### Cloning the app
+## Introduction
 
-Go to the [Anvil Editor](https://anvil.works/build?utm_source=github:app_README) (you might need to sign up for a free account) and click on “Clone from GitHub” (underneath the “Blank App” option):
+### Anvil
 
-<img src="https://anvil.works/docs/version-control-new-ide/img/git/clone-from-github.png" alt="Clone from GitHub"/>
+If you're new here, welcome! [Anvil](/) is a platform for building full-stack web apps with nothing but Python. No need to wrestle with JS, HTML, CSS, Python, SQL and all their frameworks – just **build it all in Python**.
 
-Enter the URL of this GitHub repository. If you're not yet logged in, choose "GitHub credentials" as the authentication method and click "Connect to GitHub".
+You're going to need to know the basics of Anvil before using this template, so I'd recommend following our 10-minute intro tutorial. This should give you enough knowledge to begin using the SaaS template.
 
-<img src="https://anvil.works/docs/version-control-new-ide/img/git/clone-app-from-git.png" alt="Clone App from Git modal"/>
+### SaaS Apps
 
-Finally, click "Clone App".
+SaaS (Software as a Service) apps are 
 
-This app will then be in your Anvil account, ready for you to run it or start editing it! **Any changes you make will be automatically pushed back to this repository, if you have permission!** You might want to [make a new branch](https://anvil.works/docs/version-control-new-ide?utm_source=github:app_README).
+### Why use this template?
 
-### Running the app yourself:
+This template is a solid foundation for building your own SaaS app. This template gives you:
 
-Find the **Run** button at the top-right of the Anvil editor:
+- Full Stripe payment and checkout
+- Subscription management synced with the app
+- Account management synced with Stripe
+- Easy-to-configure user permissions
 
-<img src="https://anvil.works/docs/img/run-button-new-ide.png"/>
+{{<figure src="img/using-saas-template/user-flow-diagram.png" narrow="true" width="600px" caption="The User Flow Diagram For The Template">}}
 
+Overall, it's an ideal starting point for your project.
 
-### Publishing the app on your own URL
+## Prerequisites
 
-Now you've cloned the app, you can [deploy it on the internet with two clicks](https://anvil.works/docs/deployment/quickstart?utm_source=github:app_README)! Find the **Publish** button at the top-right of the editor:
+To follow this guide you will need the following:
 
-<img src="https://anvil.works/docs/deployment-new-ide/img/environments/publish-button.png"/>
+1. An understanding of Python
+2. A [Stripe account](https://dashboard.stripe.com/login)
+3. Basic knowledge of Anvil (a great place to start is with Anvil's [Feedback form tutorial](https://anvil.works/learn/tutorials/feedback-form))
 
-When you click it, you will see the Publish dialog:
+## Understanding the template's structure
 
-<img src="https://anvil.works/docs/deployment-new-ide/img/quickstart/empty-environments-dialog.png"/>
+The template is divided into two main parts: the Stripe integration and the Anvil app. Stripe manages payments, subscriptions, and invoicing, while the Anvil app handles user authentication and permissions.
 
-Click **Publish This App**, and you will see that your app has been deployed at a new, public URL:
+The app relies on the following Stripe features:
 
-<img src="https://anvil.works/docs/deployment-new-ide/img/quickstart/default-public-environment.png"/>
+- [Customer Portals](https://docs.stripe.com/customer-management)
+- [Pricing Tables](https://docs.stripe.com/payments/checkout/pricing-table)
+- [APIs](https://docs.stripe.com/api)
+  - [Retrieve price list](https://docs.stripe.com/api/prices/list)
+  - [Retrieve a product](https://docs.stripe.com/api/products/retrieve)
+  - [Retrieve a customer](https://docs.stripe.com/api/customers/retrieve)
+  - [Cancel a subscription](https://docs.stripe.com/api/subscriptions/cancel)
+  - [Delete a customer](https://docs.stripe.com/api/customers/delete)
+- [Webhook](https://docs.stripe.com/webhooks) for the following events:
+  - `customer.subscription.updated`
+  - `customer.created`
 
-That's it - **your app is now online**. Click the link and try it!
+Here's an API flow to help visualise the integration:
 
-## About Anvil
+{{<figure src="img/using-saas-template/api-call-diagram.png" narrow="true" width="600px" caption="API Flow Diagram">}}
 
-If you’re new to Anvil, welcome! Anvil is a platform for building full-stack web apps with nothing but Python. No need to wrestle with JS, HTML, CSS, Python, SQL and all their frameworks – just build it all in Python.
+---
 
-<figure>
-<figcaption><h3>Learn About Anvil In 80 Seconds👇</h3></figcaption>
-<a href="https://www.youtube.com/watch?v=3V-3g1mQ5GY" target="_blank">
-<img
-  src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/anvil-in-80-seconds-YouTube.png"
-  alt="Anvil In 80 Seconds"
-/>
-</a>
-</figure>
-<br><br>
+## Setting up the template
 
-[![Try Anvil Free](https://anvil-website-static.s3.eu-west-2.amazonaws.com/mark-complete.png)](https://anvil.works?utm_source=github:app_README)
+This section will guide you through getting started with the template, understanding its features, and further developing it to suit your needs.
+  
+Let's get started!
 
-To learn more about Anvil, visit [https://anvil.works](https://anvil.works?utm_source=github:app_README).
+---
 
-## Tutorials and documentation
+### Step 1 - Stripe Account Setup
 
-### Tutorials
+We'll start by setting up our Stripe account. [Register for a Stripe account](https://dashboard.stripe.com/login) and login. Then enter your [business details](https://support.stripe.com/questions/business-information-requirements-to-use-stripe?locale=en-GB) to start capturing recurring revenue (or skip this step if you're only going to use [Stripe's test mode](https://stripe.com/docs/test-mode?locale=en-GB)). Lastly, activate Stripe's [test mode](https://stripe.com/docs/test-mode?locale=en-GB).
 
-If you are just starting out with Anvil, why not **[try the 10-minute Feedback Form tutorial](https://anvil.works/learn/tutorials/feedback-form?utm_source=github:app_README)**? It features step-by-step tutorials that will introduce you to the most important parts of Anvil.
+---
 
-Anvil has tutorials on:
-- [Building Dashboards](https://anvil.works/learn/tutorials/data-science#dashboarding?utm_source=github:app_README)
-- [Multi-User Applications](https://anvil.works/learn/tutorials/multi-user-apps?utm_source=github:app_README)
-- [Building Web Apps with an External Database](https://anvil.works/learn/tutorials/external-database?utm_source=github:app_README)
-- [Deploying Machine Learning Models](https://anvil.works/learn/tutorials/deploy-machine-learning-model?utm_source=github:app_README)
-- [Taking Payments with Stripe](https://anvil.works/learn/tutorials/stripe?utm_source=github:app_README)
-- And [much more....](https://anvil.works/learn/tutorials?utm_source=github:app_README)
+### Step 2 - Add The API Key
 
-### Reference Documentation
+For the integration to work, we need to add your Stripe API key to the app. Copy your [Stripe account's Secret key](https://stripe.com/docs/keys) and, in this app's [App Secrets](https://anvil.works/docs/security/encrypting-secret-data), set the value of "stripe\_test\_api\_key" to your key.
 
-The Anvil reference documentation provides comprehensive information on how to use Anvil to build web applications. You can find the documentation [here](https://anvil.works/docs/overview?utm_source=github:app_README).
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/app-secrets-location.png)
 
-If you want to get to the basics as quickly as possible, each section of this documentation features a [Quick-Start Guide](https://anvil.works/docs/overview/quickstarts?utm_source=github:app_README).
+---
+
+### Step 3 - Creating A Pricing Table
+
+Next, we need to create a pricing table for a customers to use. Start in the Anvil app editor, [publish this app](https://anvil.works/docs/deployment-new-ide/quickstart) and take a copy of the URL - we'll use this in later in this step.
+
+In the Stripe dashboard, [navigate to the Products catalogue](https://dashboard.stripe.com/test/products?active=true), select the [Pricing tables tab](https://dashboard.stripe.com/test/pricing-tables), and create a [pricing table](https://stripe.com/docs/payments/checkout/pricing-table).
+
+1. Create a [product](https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-product) called "Personal"
+2. Add one [price](https://stripe.com/docs/products-prices/how-products-and-prices-work#what-is-a-price) to the Personal product
+3. In the payment settings for each product you will find a "Confirmation page" section. In that section select "Don't show confirmation page" and enter the URL of this app that we copied in step 5.
+
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/pricing-table.png)
+
+---
+
+### Step 4 - Adding The Pricing Table To Your App
+
+Stripe's website should take you to your [pricing table's page (if not, follow this link and select your pricing table)](https://dashboard.stripe.com/test/pricing-tables). We need to add the details of this to our SaaS app.
+
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-dashboard-pricing-table-code.png)
+
+1. Copy the code for the pricing table.
+2. Open the StripePricing form in the Anvil editor and [edit the custom HTML](https://anvil.works/docs/ui/components/forms#HTML-Forms-&-Custom-HTML-Forms)
+3. And paste the code it into the StripePricing form's custom HTML.
+4. Lastly, add `anvil-name="stripe-pricing-table"` to the stripe-pricing-table tag. The final HTML should look like this:
+
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/stripe-pricing-html.png)
+
+---
+
+### Step 5 - Setting Up The Webhooks
+
+We need Stripe to tell us when a new customer is created and when their subscription is updated, so we can update our Users table with the Stripe subscription details. We'll use webhooks to do this. [There is a guide to setting up webhooks in Stripe here](https://stripe.com/docs/development/dashboard/register-webhook?locale=en-GB#add-a-webhook-endpoint) but let me give you brief instructions.
+
+#### Customer Created
+
+1. Open the [Webhooks page](https://dashboard.stripe.com/test/webhooks) in Stripe and click the "+ Add endpoint" button.
+2. Set the endpoint URL to your published app's URL with "/\_/api/stripe/stripe\_customer\_created" on the end - i.e. "https://my-saas.anvil.app/\_/api/stripe/stripe\_customer\_created". ![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/endpoint-url.png)
+3. Then click "+ select events" and select "customer.created" under events to listen for. ![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/searching-events.png)
+4. From now on, this will call the \`stripe\_customer\_created\` function in your Anvil app's StripeFunctions module when a customer is created. ![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/webhook-setup.png)
+
+#### Subscription Updated
+
+1. Add another endpoint in Stripe.
+2. Set the endpoint URL to your published app's URL with "/\_/api/stripe/stripe\_subscription\_updated" on the end i.e. "https://my-saas.anvil.app/\_/api/stripe/stripe\_subscription\_updated"
+3. Then select "customer.subscription.updated" under events to listen for.
+4. From now on, this will call the \`stripe\_subscription\_updated\` function in the StripeFunctions module every time a customer is created.
+
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png)
+
+---
+
+### Step 6 - Setting Up The Customer Portal
+
+Let's quickly set up a way for users to cancel their subscription. Go the Stripe dashboard and set up a [customer portal](https://dashboard.stripe.com/settings/billing/portal).
+
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/customer-portal-location.png)
+
+Activate the test link and copy it. Then open the SaaS app's AccountManagement form and point the "manage\_subscription\_link" component's URL to the copied link
+
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/manage-subscription-button.png)
+
+### Step 7 - Swapping The Startup Form
+
+Lastly, in the Anvil editor, switch the [startup form](https://anvil.works/docs/client/components/forms#the-startup-form-or-module) from "APP_README" to "LoginPage".
+
+With these steps completed, your Stripe integration is ready for testing.
+
+---
+
+## Testing The App
+
+The template has a number of [Notifications](https://anvil.works/docs/client/alerts-and-notifications#notifications) which will guide you through testing the app as a user. This will both test the integration we've set up and let you experience what the app is like as a user. [Run the app](https://anvil.works/docs/editor#the-anvil-editor) and follow along with the in-app instruction notifications.
+
+![](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/notification-example.png)
+
+---
+
+## Making The app Your Own
+
+Now that your Stripe integration is set up and you've experienced the app from a user's perspective, it's time to make this app your own.
+
+Let's start by removing all of the in-app instruction notifications:
+
+1. Search (_ctrl+shift+F_) for "# TEMPLATE EXPLANATION ONLY" comments and delete all the lines mentioned in the comment
+2. Take Stripe out of test mode and update API keys
+3. Begin creating your own functionality and authenticating user permissions with `@anvil.server.callable(require_user=has_subscription)`
