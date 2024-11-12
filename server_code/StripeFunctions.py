@@ -43,24 +43,6 @@ def get_product_names():
   except stripe.error.StripeError as e:
       print(f"Error: {e}")
       return []
-
-@anvil.server.callable(require_user=True)
-def cancel_subscription():
-  user = anvil.users.get_user()
-  # Need to raise an exception here if the subscription isn't cancelled
-  
-  try:
-    stripe_customer_record = stripe.Customer.retrieve(
-      user["stripe_id"],
-      expand=["subscriptions"]
-    )
-    subscription_id = stripe_customer_record.get("subscriptions").get("data")[0].get("id")
-    stripe_subsription = stripe.Subscription.delete(
-      subscription_id,
-    )
-    # x = 1/0
-  except Exception as e:
-    print("Error when cancelling subscription: ", e, "\nUser ID: ", user.get_id())
   
 @anvil.server.callable(require_user=True)
 def delete_stripe_customer(stripe_id):
