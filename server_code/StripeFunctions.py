@@ -31,6 +31,7 @@ def get_prices():
       prices_with_product_details[price.id] = product_info
   return prices_with_product_details
 
+# TEMPLATE EXPLANATION ONLY - DELETE THIS FUNCTION WHEN YOU'RE READY   
 @anvil.server.callable
 def get_product_names():
   try:
