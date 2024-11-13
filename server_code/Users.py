@@ -8,8 +8,10 @@ import anvil.server
 
 from .StripeFunctions import delete_stripe_customer
 
-def has_subscription(user):
-  return user["subscription"] and user["subscription"] != "Free"
+# The has_subscription takes a list object and checks whether the user's subscription is valid for the decorated function
+# See the Product Server Module to see it in use
+def has_subscription(user, allowed_subscriptions):
+  return user["subscription"] and user["subscription"] in allowed_subscriptions
 
 @anvil.server.callable(require_user=True)
 def change_name(name):

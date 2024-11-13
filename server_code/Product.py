@@ -8,7 +8,8 @@ import anvil.server
 
 from .Users import has_subscription
 
-# The has_subscription takes a list object and checks whether the user's subscription is valid for the decorated function
-# See the Product Server Module to see it in use
-def has_subscription(user, allowed_subscriptions):
-  return user["subscription"] and user["subscription"] in allowed_subscriptions
+# Here's an example of a function that would require a paid subsciption
+@anvil.server.callable(require_user=has_subscription(anvil.users.get_user(), ["personal"]))
+def calculate_percentage_of(number, total_number):
+    percentage = (int(number) / int(total_number)) * 100
+    return percentage
