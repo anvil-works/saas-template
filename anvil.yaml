@@ -51,7 +51,7 @@ package_name: SaaS_Template
 renamed: true
 runtime_options:
   client_version: '3'
-  legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
+  legacy_features: {}
   server_spec: {base: python310-standard}
   server_version: python3-sandbox
   version: 3
