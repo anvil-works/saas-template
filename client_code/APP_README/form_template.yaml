@@ -219,12 +219,12 @@ container:
           <h2>Testing This App</h2>
           <p>The template has a number of <a
                   href="https://anvil.works/docs/client/alerts-and-notifications#notifications">Notifications</a> which will
-              guide you through testing the app as a user. This will both test the integration we've set up and let you
+              guide you through testing the app as a user. This will both test the integration you've set up and let you
               experience what the app is like as a user. <a href=https://anvil.works/docs/editor#the-anvil-editor">Run the
                   app</a> and follow along with the in-app instruction notifications.</p>
           <figure style="display: table;">
               <img
-                  src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/notification-example.png" />
+                  src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/notification-example.png" style="max-width: 1000px;" />
               <figcaption style="display: table-caption; caption-side: top; text-align: center; font-size: 0.9em;"><i>Example
                       of the testing notifications guide.</i></figcaption>
           </figure>
