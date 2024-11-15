@@ -99,6 +99,7 @@ container:
                   <img
                       src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/pricing-table.png" />
                   <br><br>
+                <li>Lastly you'll be presented with a Customer Portal, we don't need to change anything here, so click finish.</li>
               </ol>
               <li>Stripe's website should take you to your <a href="https://dashboard.stripe.com/test/pricing-tables"
                       target="_blank">pricing table's page (if not, follow this link and select your pricing table)</a>. We
