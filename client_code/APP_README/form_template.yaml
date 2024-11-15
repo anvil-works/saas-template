@@ -142,6 +142,11 @@ container:
         <hr>
         <h2>Testing this app</h2>
         <p>To test the app, set the Login form to be the <a href="https://anvil.works/docs/client/components/forms#the-startup-form-or-module" target="_blank">"startup form"</a>. Then <a href="https://anvil.works/docs/editor#the-anvil-editor" target="_blank">run the app</a> and follow along with the in-app instruction notifications.</p>
+        ## Testing The App
+
+      The template has a number of [Notifications](https://anvil.works/docs/client/alerts-and-notifications#notifications) which will guide you through testing the app as a user. This will both test the integration we've set up and let you experience what the app is like as a user. [Run the app](https://anvil.works/docs/editor#the-anvil-editor) and follow along with the in-app instruction notifications.
+
+      {{<figure src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/notification-example.png" narrow="true" width="800px" caption="Example of the testing notifications guide">}}
         <br>
         <hr>
         <h2>Making this app your own</h2>
