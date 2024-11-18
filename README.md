@@ -35,7 +35,7 @@ This template is a solid foundation for building your own SaaS app. This templat
 - Account management synced with Stripe
 - Easy-to-configure user permissions
 
-{{<figure src="img/using-saas-template/user-flow-diagram.png" narrow="true" width="600px" caption="The User Flow Diagram For The Template">}}
+![The User Flow Diagram For The Template"](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/user-flow-diagram.png)
 
 Overall, it's an ideal starting point for your project.
 
@@ -67,7 +67,7 @@ The app relies on the following Stripe features:
 
 Here's an API flow to help visualise the integration:
 
-{{<figure src="img/using-saas-template/api-call-diagram.png" narrow="true" width="600px" caption="API Flow Diagram">}}
+![API Flow Diagram](https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/api-call-diagram.png)
 
 ---
 
