@@ -1,5 +1,6 @@
 components_by_slot:
-  nav_drawer:
+  nav_drawer: []
+  navigation:
   - layout_properties: {}
     name: calculator_navigation_link
     properties: {icon: 'mi:calculate', navigate_to: Calculator, text: Calculator}

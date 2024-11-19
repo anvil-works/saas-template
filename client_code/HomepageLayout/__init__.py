@@ -6,8 +6,11 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 
+from ..StripePricing import StripePricing
+
 from anvil import designer
 
+# TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY   
 if anvil.designer.in_designer:
   PRODUCT_NAMES = ["Personal"]
 else:

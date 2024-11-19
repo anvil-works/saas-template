@@ -27,7 +27,9 @@ class AccountManagement(AccountManagementTemplate):
       self.refresh_data_bindings()
 
     # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
-    Notification("Now that you've seen how the template handles editing user information, let’s explore how users can cancel a subscription. We'll do this using the Stripe Customer Portal we set up while setting up with this template. Click the Manage Subscription button, cancel your subscription amd go back to this app's homepage.", title="Template Explanation", timeout=None, style="warning").show()
+    Notification("Now that you've seen how the template handles editing user information, let’s explore how users can cancel a subscription. We'll do this using the Stripe Customer Portal we set up while setting up with this template. Click the Manage Subscription button, cancel your subscription and go back to this app's homepage.", title="Template Explanation", timeout=None, style="warning").show()
+    Notification("The webhooks set up earlier will keep user records in this app synchronized with customer records in Stripe. For details on how this template manages cancellations and deletions, check out our full guide at https://anvil.works/learn/tutorials/using-saas-template.", title="Template Explanation", timeout=None, style="warning").show()
+    Notification("To wrap up, try deleting your account. This will log you out, remove all user information from both this app and Stripe, and complete your tour of the app’s functionality.", title="Template Explanation", timeout=None, style="warning").show()
 
   def change_email_link_click(self, **event_args):
     """This method is called when the link is clicked"""
@@ -54,4 +56,4 @@ class AccountManagement(AccountManagementTemplate):
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
     # TEMPLATE EXPLANATION ONLY - DELETE THIS WHEN YOU'RE READY
-    Notification("Welcome to your app's account management page—a solid foundation for self-service account management that you can customize for your users. Start by trying to update your name.", title="Template Explanation", timeout=None, style="warning").show()
+    Notification("Welcome to your app's account management page—a solid foundation for self-service account management that you can customize for your users. Start by updating your name.", title="Template Explanation", timeout=None, style="warning").show()

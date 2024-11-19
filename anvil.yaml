@@ -44,14 +44,14 @@ db_schema:
 dependencies:
 - dep_id: dep_gqlhr7sei7ys7
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
-  version: {version_tag: v1.1.3}
+  version: {version_tag: v1.2.0}
 name: SaaS Template
 native_deps: null
 package_name: SaaS_Template
 renamed: true
 runtime_options:
   client_version: '3'
-  legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
+  legacy_features: {}
   server_spec: {base: python310-standard}
   server_version: python3-sandbox
   version: 3
