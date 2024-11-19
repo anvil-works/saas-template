@@ -18,13 +18,22 @@ In this guide, we’ll walk through the key components of the template, covering
 
 ### Anvil
 
-If you're new here, welcome! [Anvil](/) is a platform for building full-stack web apps with nothing but Python. No need to wrestle with JS, HTML, CSS, Python, SQL and all their frameworks – just **build it all in Python**.
+If you're new here, welcome! [Anvil](https://anvil.works/) is a platform for building full-stack web apps with nothing but Python. No need to wrestle with JS, HTML, CSS, Python, SQL and all their frameworks – just **build it all in Python**.
 
 You're going to need to know the basics of Anvil before using this template, so I'd recommend following our 10-minute intro tutorial. This should give you enough knowledge to begin using the SaaS template.
 
 ### SaaS Apps
 
-SaaS (Software as a Service) apps are 
+A SaaS (Software as a Service) app is a cloud-based application accessed online, usually through a subscription. The provider manages infrastructure like hosting and computing resources, simplifying the experience for users.
+
+The key benefits of creating a SaaS app include:
+
+- Recurring Revenue: Reliable income from subscriptions.
+- Rapid Development: Quickly add features and fixes.
+- Accessibility: No installation; available anywhere online.
+- Data Insights: Gather and analyze user behavior.
+- Customer Retention: Build loyalty with updates and support.
+- Scalability: Easily grow with user demand.
 
 ### Why use this template?
 
@@ -170,6 +179,64 @@ The template has a number of [Notifications](https://anvil.works/docs/client/ale
 
 ---
 
+## Using User Permissions
+
+It's time to use the built-in user permissions.
+
+The template comes with user permissions that verify if a user's subscription level lets them use specific functions. To use this, simply decorate client functions that call restricted functions with `@catch_permission_errors` - like this:
+
+``` Python
+@catch_permission_errors
+def foo():
+  anvil.server.call(bar)
+```
+
+And decorate the function that needs a subscription with `@anvil.server.callable` passing its `require_user` argument the `has_subscription` function. Then pass `has_subscription` a user object and the subscription/s required to use the function:
+
+``` Python
+@anvil.server.callable(require_user=has_subscription(anvil.users.get_user(), ["personal", "pro"]))
+def bar():
+  return True
+```
+
+Let me explain how this works.
+
+There is `catch_permission_errors` in the `user_permissions` client module. This is a decorator which catches user permissions errors thrown by `has_subscription` and returns a helpful notification informing the user they need to upgrade to use the functionality.
+
+The `has_subscription` in the `Users` Server Module takes both a user object and a list of valid subscriptions required to use a specific function. If the user's subscription is in the list, it returns `True`.
+
+We can pass `has_subscription` to `anvil.server.callable`'s `require_user` argument. If `has_subscription` returns `True` then the user is authorised to use the function.
+
+Putting it all together gives us a client side function decorated with `catch_permission_errors`:
+
+
+``` Python
+@catch_permission_errors
+def foo():
+  anvil.server.call(bar)
+```
+
+Which calls a server function decorated with `@anvil.server.callable()`:
+
+``` Python
+# Here's an example of a function that would require the user to have a "personal" or "pro" subsciption
+@anvil.server.callable(require_user=has_subscription(anvil.users.get_user(), ["personal", "pro"]))
+def bar():
+  return True
+```
+
+`@anvil.server.callable()` uses `has_subscription` to check the user's subscription is in the allowed subscription list. If it is, then the function runs. If it isn't it throws a `PermissionDenied` error which is caught by `catch_permission_errors`.
+
+#### Overall Flow of the Code
+
+1. Functions decorated with `@catch_permission_errors` on the client side call a function which is decorated with `@anvil.server.callable` and requires a subscription.
+2. The `@anvil.server.callable` decorator uses `has_subscription` to verify the user's subscription status.
+3. If the user has a subscription which is in the allowed subscriptions passed to `has_subscription`, they can proceed to call the function.
+4. If they don’t meet the subscription requirement, a permissions error is caught by `catch_permission_errors` and the user is notified that they need to upgrade.
+
+
+---
+
 ## Making The app Your Own
 
 Now that your Stripe integration is set up and you've experienced the app from a user's perspective, it's time to make this app your own.
@@ -177,5 +244,9 @@ Now that your Stripe integration is set up and you've experienced the app from a
 Let's start by removing all of the in-app instruction notifications:
 
 1. Search (_ctrl+shift+F_) for "# TEMPLATE EXPLANATION ONLY" comments and delete all the lines mentioned in the comment
-2. Take Stripe out of test mode and update API keys
-3. Begin creating your own functionality and authenticating user permissions with `@anvil.server.callable(require_user=has_subscription)`
+2. Take Stripe out of test mode and update your API keys
+3. Begin creating your own functionality - we have a helpful step-by-step on how to get started with this in [our full guide](https://anvil.works/learn/tutorials/using-saas-template#begin-creating-your-own-functionality)
+
+
+
+
