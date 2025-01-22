@@ -1,0 +1,48 @@
+components_by_slot:
+  content_slot:
+  - components:
+    - layout_properties: {grid_position: 'JTSTTE,SFBYQC'}
+      name: heading_1
+      properties: {align: center, text: Percentage calculator}
+      type: form:dep_gqlhr7sei7ys7:_Components.Heading
+    - layout_properties: {grid_position: 'EPZMPZ,SGMIVD'}
+      name: spacer_2
+      properties: {}
+      type: Spacer
+    - layout_properties: {grid_position: 'ZIIPHL,UGYSRK'}
+      name: spacer_1
+      properties: {}
+      type: Spacer
+    - event_bindings: {}
+      layout_properties: {grid_position: 'ZIIPHL,FGCWSY'}
+      name: number_1_textbox
+      properties: {type: number}
+      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+    - layout_properties: {grid_position: 'ZIIPHL,CGNAHN'}
+      name: text_1
+      properties: {align: center, text: is what percentage of}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
+    - event_bindings: {pressed_enter: number_2_textbox_pressed_enter}
+      layout_properties: {grid_position: 'ZIIPHL,USWKHP'}
+      name: number_2_textbox
+      properties: {}
+      type: form:dep_gqlhr7sei7ys7:_Components.TextInput.TextBox
+    - layout_properties: {grid_position: 'ZIIPHL,NWEHXA'}
+      name: text_2
+      properties: {align: left, text: '?'}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
+    - layout_properties: {grid_position: 'YXIBNS,NFEBCC'}
+      name: answer_text
+      properties: {align: center, text: '', visible: false}
+      type: form:dep_gqlhr7sei7ys7:_Components.Text
+    layout_properties: {}
+    name: column_panel_1
+    properties: {col_spacing: tiny, col_widths: '{"CGNAHN":20,"NWEHXA":5,"NFEBCC":13,"USWKHP":22,"FGCWSY":25,"SGMIVD":56,"UGYSRK":5}'}
+    type: ColumnPanel
+  - event_bindings: {click: calculate_button_click}
+    layout_properties: {}
+    name: calculate_button
+    properties: {align: center, appearance: filled, icon_size: 0, text: Calculate}
+    type: form:dep_gqlhr7sei7ys7:_Components.Button
+is_package: true
+layout: {type: 'form:HomepageLayout'}

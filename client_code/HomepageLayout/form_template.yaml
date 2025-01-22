@@ -1,0 +1,37 @@
+components_by_slot:
+  nav_drawer: []
+  navigation:
+  - layout_properties: {}
+    name: calculator_navigation_link
+    properties: {icon: 'mi:calculate', navigate_to: Calculator, text: Calculator}
+    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+  - event_bindings: {click: stripe_pricing_link_click}
+    layout_properties: {}
+    name: pricing_navigation_link
+    properties: {icon: 'mi:attach_money', text: Pricing}
+    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+  - event_bindings: {click: stripe_pricing_link_click}
+    layout_properties: {}
+    name: upgrade_navigation_link
+    properties: {icon: 'mi:arrow_upward', text: Upgrade}
+    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+  - layout_properties: {}
+    name: account_navigation_link
+    properties: {icon: 'mi:person', navigate_to: AccountManagement, text: Account}
+    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+  - event_bindings: {click: logout_navigation_link_click}
+    layout_properties: {}
+    name: logout_navigation_link
+    properties: {icon: 'mi:logout', text: Log out}
+    type: form:dep_gqlhr7sei7ys7:_Components.NavigationLink
+  slot_2: []
+is_package: true
+layout:
+  properties: {show_sidesheet: false}
+  type: form:dep_gqlhr7sei7ys7:Layouts.NavigationDrawerLayout
+layout_metadata: {title: Homepage Layout}
+slots:
+  content_slot:
+    index: 0
+    set_layout_properties: {}
+    target: {name: content, type: slot}
