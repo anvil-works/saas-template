@@ -1,13 +1,5 @@
 components: []
 container:
-  properties:
-    html: |-
-      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-      <stripe-pricing-table
-        anvil-name="stripe-pricing-table"
-        pricing-table-id=""
-        publishable-key=""
-      >
-      </stripe-pricing-table>
+  properties: {html: ''}
   type: HtmlTemplate
 is_package: true
