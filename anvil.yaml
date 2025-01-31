@@ -57,7 +57,7 @@ runtime_options:
   server_version: python3-sandbox
   version: 3
 secrets:
-  stripe_test_secret_api_key:
+  stripe_secret_api_key:
     type: secret
     value: {T4O5IQ35ZG7TTCZN: wKicTXysluYtsuFwBYK31Uq1YhX3Xedua/2NOqMILkSdO+vxMTel49STEStiie3I198EXBvuY9xYDXsH1ni1QdXB96Kst9LZm0JMPiNzyPn3kEAMu6wKSLB39Mc3uP+YZt/l/vsmDWREQ+FtgXcekPdaGAZJPMa4G+5eGTfURDdpD2Ifi5ezUtEX/VrBi41ZjLIVgYjzoLQS2s7VqDdqWUaAIzXUrCN5vR9y2LNszbSWQLTzrDBmIqz6ZKeAzricQdAez22e0SPYPg==}
 services:
