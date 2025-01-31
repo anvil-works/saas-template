@@ -6,7 +6,11 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 
-from .StripeFunctions import delete_stripe_customer
+import stripe
+
+# Set your secret key. Remember to switch to your live secret key in production.
+# See your keys here: https://dashboard.stripe.com/apikeys
+stripe.api_key = anvil.secrets.get_secret('stripe_secret_api_key')
 
 # @anvil.server.callable's require_user argument takes either a Boolean value. If the Boolean is True, the user has permission to run the decorated function.
 # We can pass require_user a function which evaluates to True or False but we cannot pass any arguments to that function
@@ -18,8 +22,9 @@ from .StripeFunctions import delete_stripe_customer
 def user_has_subscription(allowed_subscriptions):
     def verify_subscription(user):
         # Return true if user has subscription in allowed subscriptions
-        return user["subscription"] and user["subscription"] in allowed_subscriptions
+        return user["subscription"] and user["subscription"].lower() in [subscription.lower() for subscription in allowed_subscriptions]
     return verify_subscription
+
 
 @anvil.server.callable(require_user=True)
 def change_name(name):
@@ -30,14 +35,32 @@ def change_name(name):
 @anvil.server.callable(require_user=True)
 def change_email(email):
   user = anvil.users.get_user()
-  user["email"] = email
+  try:
+    customer = stripe.Customer.modify(
+        user["stripe_id"],
+        email=email
+    )
+    user["email"] = email
+    print("Customer email updated successfully:", customer)
+  except stripe.error.StripeError as e:
+      print("Stripe API error:", e)
+  except Exception as e:
+      print("An error occurred when updating a user's email:", e)
   return user
 
 @anvil.server.callable(require_user=True)
 def delete_user():
   user = anvil.users.get_user()
   if user["stripe_id"]:
-    delete_stripe_customer(user["stripe_id"])
-  user.delete()
-  
+    try: 
+      deleted_customer = stripe.Customer.delete(user["stripe_id"])
+      user.delete()
+      print(f"Customer {user['stripe_id']} deleted successfully:", deleted_customer)
+    except stripe.error.StripeError as e:
+      print("Stripe API error:", e)
+    except Exception as e:
+      print("An unexpected error occurred:", e)
+  else:
+    user.delete()
+
 

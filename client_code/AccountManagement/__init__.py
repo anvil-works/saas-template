@@ -21,7 +21,7 @@ class AccountManagement(AccountManagementTemplate):
 
   def change_name_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    new_name = alert(ChangeName(item=self.user["name"]), title="Change name", buttons=None, dismissible=True)
+    new_name = alert(ChangeName(item=self.user["name"]), title="Change name", buttons=None, dismissible=True, large=True)
     if new_name:
       self.user = anvil.server.call('change_name', new_name)
       self.refresh_data_bindings()
@@ -33,7 +33,7 @@ class AccountManagement(AccountManagementTemplate):
 
   def change_email_link_click(self, **event_args):
     """This method is called when the link is clicked"""
-    new_email = alert(ChangeEmail(item=self.user["email"]), title="Change email", buttons=None, dismissible=True)
+    new_email = alert(ChangeEmail(item=self.user["email"]), title="Change email", buttons=None, dismissible=True, large=True)
     if new_email:
       self.user = anvil.server.call('change_email', new_email)
       self.refresh_data_bindings()
