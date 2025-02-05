@@ -8,7 +8,7 @@ components:
   name: rich_text_1
   properties:
     content: |-
-      Are you want to delete your account, subscriptinon information and usage data from our systems?
+      Are you want to delete your account, subscription information and usage data from our systems?
       <br>
       <span style="color:#B3261E;"><b>This is irreversible.</b></span>
     format: restricted_html
