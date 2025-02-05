@@ -1,7 +1,7 @@
 components:
 - layout_properties: {grid_position: 'HRHCZP,IELVDW'}
   name: text_1
-  properties: {icon: '', scale: medium, text: 'To change the name used in your billing details, please select "Manage subscription" in the account management page and change your name in Stripe.'}
+  properties: {icon: '', scale: medium, text: 'This will change your name in this app. To change the name used in your billing details, please select "Manage subscription" in the account management page and change your name in Stripe.'}
   type: form:dep_gqlhr7sei7ys7:_Components.Text
 - data_bindings:
   - {code: 'self.user[''name''] or "-"', property: text, writeback: false}
