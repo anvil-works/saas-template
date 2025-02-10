@@ -1,6 +1,6 @@
 # Welcome to Anvil's SaaS Template
 
-[Anvil's SaaS (Software as a Service) template](https://anvil.works/build#clone:T4O5IQ35ZG7TTCZN=ZAX5GOZVWFTSGRTA3CBONL6X) is a solid starting point and foundation for your subscription-based SaaS product. This template uses [Stripe's](https://stripe.com) API for subscription management, and includes simplified user permissions for you to use throughout your app. It's an ideal starting point for your project.
+[Anvil's SaaS (Software as a Service) template](https://anvil.works/build#clone:SUTICB6NGVZM7J5S=CB3DXR7V65FYL6UQOF2VQF5L) is a solid starting point and foundation for your subscription-based SaaS product. This template uses [Stripe's](https://stripe.com) API for subscription management, and includes simplified user permissions for you to use throughout your app. It's an ideal starting point for your project.
 
 > [Stripe](https://stripe.com) provides tools for businesses to accept, manage, and process payments online and in person, offering features like customizable APIs, fraud prevention, subscription billing, and global currency support.
 
