@@ -46,6 +46,7 @@ dependencies:
 - dep_id: dep_gqlhr7sei7ys7
   resolution_hints: {app_id: 4UK6WHQ6UX7AKELK, name: Material 3 Theme 2.0, package_name: Material_3_Theme_2_0}
   version: {version_tag: v1.2.2}
+metadata: {description: 'For information on how to use this template, see our guide here: https://anvil.works/learn/tutorials/using-saas-template'}
 name: SaaS Template
 native_deps: null
 package_name: SaaS_Template
