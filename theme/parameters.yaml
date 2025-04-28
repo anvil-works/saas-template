@@ -348,5 +348,4 @@ roles:
   name: outlined-error
 - components: [TextBox, TextArea, DatePicker, DropDown]
   name: input-error
-- components: []
-  name: italic
+- {components: null, name: italic}
