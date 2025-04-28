@@ -1,7 +1,7 @@
 components:
 - layout_properties: {grid_position: 'ZAMWZN,UKCBWI'}
   name: rich_text_1
-  properties: {align: center, content: 'Welcome to Anvil''s SaaS template. For information on how to use this template, see our guide here: [https://anvil.works/learn/tutorials/using-saas-template](https://anvil.works/learn/tutorials/using-saas-template).', font_size: 25, foreground: '#3B4C66', role: italic}
+  properties: {align: center, content: 'Welcome to Anvil''s SaaS template. For information on how to use this template, see our guide here: [https://anvil.works/learn/tutorials/using-saas-template](https://anvil.works/learn/tutorials/using-saas-template).', font_size: 26, foreground: '#3B4C66', role: italic}
   type: RichText
 - components:
   - components:
