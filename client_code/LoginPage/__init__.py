@@ -28,5 +28,4 @@ class LoginPage(LoginPageTemplate):
       open_form('Calculator')
     # TEMPLATE EXPLANATION ONLY - DELETE THIS ELSE BRANCH WHEN YOU'RE READY
     else:
-      Notification("Welcome to Anvil's SaaS template. For information on how to use this template, see our guide here: <a href='https://anvil.works/learn/tutorials/using-saas-template'>https://anvil.works/learn/tutorials/using-saas-template</a>", title="Getting Started", timeout=None, style="warning").show()
       Notification("Here's your SaaS app's login page. To start click login and then signup for an account.", title="Template Explanation", timeout=None, style="warning").show()
