@@ -90,7 +90,7 @@ For the integration to work, we need to add your Stripe API key to the app. You 
 
 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/developers-button-stripe.png" width="400px"/>
 
-Copy your [Stripe account's Secret key](https://stripe.com/docs/keys) and, in the SaaS template app's [App Secrets](https://anvil.works/docs/security/encrypting-secret-data), set the value of "stripe\_test\_api\_key" to your key.
+Copy your [Stripe account's Secret key](https://stripe.com/docs/keys) and, in the SaaS template app's [App Secrets](https://anvil.works/docs/security/encrypting-secret-data), set the value of "stripe\_secret\_api\_key" to your key.
 
 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/app-secrets-location.png" width="450px"/>
 
