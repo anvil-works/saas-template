@@ -135,7 +135,7 @@ We need Stripe to tell us when a new customer is created and when their subscrip
 1. Add another endpoint in Stripe.
 2. Set the endpoint URL to your published app's URL with "\/_/api/stripe/stripe\_subscription\_updated" added to the end i.e. "https://my-saas.anvil.app/\_/api/stripe/stripe\_subscription\_updated"
 3. Then select "customer.subscription.created" and "customer.subscription.updated" under events to listen for.
-4. From now on, this will call the `stripe_subscription_updated` function in the StripeFunctions Server Module every time a customer is created.
+4. From now on, this will call the `stripe_subscription_updated` function in the StripeFunctions Server Module every time a subscription is created or updated.
 
 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png" width="600px"/>
 
