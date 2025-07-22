@@ -67,7 +67,8 @@ components_by_slot:
       text: Manage subscription
       url: ''
     type: form:dep_gqlhr7sei7ys7:_Components.Link
-  - layout_properties: {}
+  - event_bindings: {click: delete_account_link_click}
+    layout_properties: {}
     name: delete_account_link
     properties:
       margin: [2rem, null, 2rem, null]
