@@ -56,7 +56,7 @@ The app relies on the following Stripe features:
   - [Cancel a subscription](https://docs.stripe.com/api/subscriptions/cancel)
   - [Delete a customer](https://docs.stripe.com/api/customers/delete)
 - [Webhooks](https://docs.stripe.com/webhooks) - to send data to our Anvil app when an event happens in Stripe.
-  - `customer.subscription.updated`
+  - `customer.subscription.updated` and `customer.subscription.created`
   - `customer.created`
 
 Here's an API flow to help visualise the integration:
@@ -130,11 +130,11 @@ We need Stripe to tell us when a new customer is created and when their subscrip
 4. Then click "+ select events" and select "customer.created" under events to listen for. <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/searching-events.png" width="600px"/>
 5. From now on, this will call the `stripe_customer_created` function in your Anvil app's StripeFunctions module when a customer is created. Here's an image of the set-up webhook:</br><img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/webhook-setup.png" width="500px"/>
 
-#### Subscription Updated
+#### Subscription Created/Updated
 
 1. Add another endpoint in Stripe.
 2. Set the endpoint URL to your published app's URL with "\/_/api/stripe/stripe\_subscription\_updated" added to the end i.e. "https://my-saas.anvil.app/\_/api/stripe/stripe\_subscription\_updated"
-3. Then select "customer.subscription.updated" under events to listen for.
+3. Then select "customer.subscription.created" and "customer.subscription.updated" under events to listen for.
 4. From now on, this will call the `stripe_subscription_updated` function in the StripeFunctions Server Module every time a customer is created.
 
 <img src="https://anvil-website-static.s3.eu-west-2.amazonaws.com/templates/saas-template/finished-webhooks.png" width="600px"/>
